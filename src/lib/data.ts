@@ -1,4 +1,4 @@
-import type { Document, FFRMCategory, GeneralNote } from './types';
+import type { Document, FFRMCategory, GeneralNote, CartagenaCategory } from './types';
 
 const uslNotes = [
   'Duración: 2 partes de 25 min a reloj corrido. Cada parte se divide en 4 periodos (3 de 5 min y 1 de 10 min).',
@@ -240,7 +240,6 @@ export const ffrmCategories: FFRMCategory[] = [
     matchTime: '2 tiempos de 35 minutos',
     directGoalFromKickoff: true,
   },
-  // F8
   {
     id: 'alev-superliga',
     title: 'Superliga Alevín',
@@ -285,7 +284,6 @@ export const ffrmCategories: FFRMCategory[] = [
     matchTime: '2 tiempos de 25 minutos',
     directGoalFromKickoff: false,
   },
-  // F9
   {
     id: '1-preben-f9',
     title: '1ª Prebenjamín Fútbol 9',
@@ -308,7 +306,6 @@ export const ffrmCategories: FFRMCategory[] = [
     matchTime: '2 tiempos de 20 minutos',
     directGoalFromKickoff: false,
   },
-  // F5
   {
     id: '2-preben-f5',
     title: 'Prebenjamín Fútbol 5',
@@ -331,7 +328,6 @@ export const ffrmCategories: FFRMCategory[] = [
     matchTime: '4 tiempos de 10 minutos',
     directGoalFromKickoff: false,
   },
-  // F8 3ª Div
   {
     id: '3-div-ben-f8',
     title: '3ª Div Benjamín F-8',
@@ -365,7 +361,6 @@ export const ffrmCategories: FFRMCategory[] = [
     matchTime: '2 tiempos de 35 minutos',
     directGoalFromKickoff: false,
   },
-  // Femenino
   {
     id: 'fem-bj-pb-f5',
     title: 'Femenino BJ/PB F-5',
@@ -410,7 +405,6 @@ export const ffrmCategories: FFRMCategory[] = [
     matchTime: '2 tiempos de 45 minutos',
     directGoalFromKickoff: true,
   },
-  // USL
   {
     id: 'cad-usl',
     title: 'Cadete USL',
@@ -483,7 +477,6 @@ export const ffrmCategories: FFRMCategory[] = [
     directGoalFromKickoff: false,
     notes: uslNotes
   },
-  // SUPER F8
   {
     id: 'super-f8',
     title: 'SuperF8 (SF8)',
@@ -516,6 +509,170 @@ export const ffrmGeneralNotes: GeneralNote[] = [
     }
 ];
 
+export const cartagenaCategories: CartagenaCategory[] = [
+  {
+    id: 'cad-f7',
+    title: 'Categoría Cadetes F7',
+    matchTime: '2 x 35 minutos',
+    substitutions: 'Ilimitadas en el juego (Fútbol 7)',
+    shinguards: 'Obligatorias',
+    rosterSize: '5-16',
+    ballSize: 4,
+    directGoalFromKickoff: false,
+    freeKickOnGoalKick: 'No',
+    temporaryExclusion: false,
+    offside: true,
+    goalkeeperPassBack: true,
+    scoreboard: 'Se pone el marcador real ocurrido en el partido',
+  },
+  {
+    id: 'cad-f11',
+    title: 'Categoría Cadete F11',
+    matchTime: '2 x 35 minutos',
+    substitutions: '7 cambios permitidos en 3 interrupciones (no se cuenta el descanso)',
+    shinguards: 'Obligatorias',
+    rosterSize: '7-18',
+    ballSize: 5,
+    directGoalFromKickoff: true,
+    freeKickOnGoalKick: 'No',
+    temporaryExclusion: false,
+    offside: true,
+    goalkeeperPassBack: true,
+    scoreboard: 'Se pone el marcador real ocurrido en el partido',
+  },
+  {
+    id: 'fem-f8',
+    title: 'Categoría Feminas F8',
+    matchTime: '2 x 35 minutos',
+    substitutions: 'Ilimitadas en el juego (Fútbol 8)',
+    shinguards: 'Obligatorias',
+    rosterSize: '5-18',
+    ballSize: 4,
+    directGoalFromKickoff: false,
+    freeKickOnGoalKick: 'No',
+    temporaryExclusion: false,
+    offside: true,
+    goalkeeperPassBack: true,
+    scoreboard: 'Se pone el marcador real ocurrido en el partido',
+  },
+  {
+    id: 'inf-f11',
+    title: 'Categoría Infantil F11',
+    matchTime: '2 x 35 minutos',
+    substitutions: '7 cambios permitidos en 3 interrupciones (no se cuenta el descanso)',
+    shinguards: 'Obligatorias',
+    rosterSize: '7-18',
+    ballSize: 5,
+    directGoalFromKickoff: true,
+    freeKickOnGoalKick: 'No',
+    temporaryExclusion: false,
+    offside: true,
+    goalkeeperPassBack: true,
+    scoreboard: 'Se pone el marcador real ocurrido en el partido',
+  },
+  {
+    id: 'inf-f8',
+    title: 'Categoría Infantil F8',
+    matchTime: '2 x 35 minutos',
+    substitutions: 'Ilimitadas en el juego (Fútbol 8)',
+    shinguards: 'Obligatorias',
+    rosterSize: '5-16',
+    ballSize: 4,
+    directGoalFromKickoff: false,
+    freeKickOnGoalKick: 'No',
+    temporaryExclusion: false,
+    offside: true,
+    goalkeeperPassBack: true,
+    scoreboard: 'Se pone el marcador real ocurrido en el partido',
+  },
+  {
+    id: 'alev-f8',
+    title: 'Categoría Alevín F8',
+    matchTime: '2 x 30 minutos',
+    substitutions: 'Ilimitadas en el juego (Fútbol 8)',
+    shinguards: 'Obligatorias',
+    rosterSize: '5-16',
+    ballSize: 4,
+    directGoalFromKickoff: false,
+    freeKickOnGoalKick: 'No',
+    temporaryExclusion: false,
+    offside: true,
+    goalkeeperPassBack: true,
+    scoreboard: 'Se pone el marcador real ocurrido en el partido',
+  },
+  {
+    id: 'ben-f8',
+    title: 'Categoría Benjamín F8',
+    matchTime: '2 x 30 minutos',
+    substitutions: 'Ilimitadas en el juego (Fútbol 8)',
+    shinguards: 'Obligatorias',
+    rosterSize: '5-16',
+    ballSize: 4,
+    directGoalFromKickoff: false,
+    freeKickOnGoalKick: 'No',
+    temporaryExclusion: false,
+    offside: true,
+    goalkeeperPassBack: true,
+    scoreboard: 'Se pone el marcador real ocurrido en el partido',
+  },
+  {
+    id: 'preben-f5',
+    title: 'Categoría Pre-Benjamín F5',
+    matchTime: '2 x 25 minutos',
+    substitutions: 'Ilimitadas en el juego (Fútbol 5)',
+    shinguards: 'Optativas',
+    rosterSize: '4-14',
+    ballSize: 3,
+    directGoalFromKickoff: false,
+    freeKickOnGoalKick: 'Sí. El adversario debe mantener una distancia de 2 metros.',
+    temporaryExclusion: true,
+    offside: false,
+    goalkeeperPassBack: false,
+    scoreboard: 'Se pone el marcador real ocurrido en el partido',
+  },
+  {
+    id: 'chup-bib-f5',
+    title: 'Categoría Chupeta y Biberón F5',
+    matchTime: '2 x 20 minutos',
+    substitutions: 'Ilimitadas en el juego (Fútbol 5)',
+    shinguards: 'Optativas',
+    rosterSize: '4-14',
+    ballSize: 3,
+    directGoalFromKickoff: false,
+    freeKickOnGoalKick: 'Sí. El adversario debe mantener una distancia de 2 metros.',
+    temporaryExclusion: true,
+    offside: false,
+    goalkeeperPassBack: false,
+    scoreboard: '0-0 (no se apunta resultado ni goleadores en acta)',
+  },
+];
+
+export const cartagenaGeneralNotes: GeneralNote[] = [
+  {
+    title: 'Aclaración sobre el número de delegados',
+    content: 'En los partidos de liga local cada equipo puede presentar 3 delegados/entrenador. En local te deja el acta meter 2 pues el otro se deberá incluir manualmente en Otras incidencias de Oficiales. En cuanto al visitante, como únicamente te deja incluir a 1 en el listado del acta, pues los otros se deberán escribir manualmente en ‘Otras incidencias de Oficiales’.'
+  },
+  {
+    title: 'Descanso de los partidos',
+    content: 'Como norma general, los descansos de los partidos de fútbol de la Liga Comarcal de Cartagena tendrán una duración de 10 minutos, pudiendo ser reducido si ambos equipos están de acuerdo. Nunca podrá durar más de 15 minutos el descanso.'
+  },
+  {
+    title: 'Excepción al inicio de la Liga Comarcal',
+    content: 'Únicamente al inicio de la liga y hasta durante el tiempo establecido por el comité, el cual se deberá preguntar al responsable de árbitros, se permitirá jugar y estar en el banquillo a jugadores que presenten DNI, pasaporte, tarjeta de residencia o un documento firmado y sellado por el club. Este documento debe indicar que la licencia tiene un fallo en el sistema y que está en proceso de solución. En estos casos, el jugador o delegado/entrenador debe ser añadido en el acta.'
+  },
+  {
+    title: 'Modificaciones de Reglas (Fútbol 5)',
+    content: `Aplicables a Chupetas, Biberón y Prebenjamín F5:
+1. Saque de meta: El adversario debe mantener una distancia de 2 metros para permitir un "saque libre".
+2. Expulsión temporal de 2 minutos: No se registra en acta. Si un equipo queda con menos de tres jugadores, se suspende. Motivos: infringir reglas persistentemente, desaprobar decisiones arbitrales, impedir ocasión de gol con mano/falta.
+3. Tarjeta Roja directa: Por reincidencia tras expulsión temporal, juego brusco grave, lenguaje obsceno.
+4. No hay fuera de juego ni cesión al portero.`
+  },
+  {
+    title: 'Modificaciones de Reglas (Chupetas y Biberones F5)',
+    content: 'El marcador siempre es 0-0, no se indican los goles ni goleadores en el acta digital.'
+  }
+];
 
 export const protocols: Document[] = [
   {

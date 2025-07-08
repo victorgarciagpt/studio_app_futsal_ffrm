@@ -19,6 +19,22 @@ export type FFRMCategory = {
   notes?: string[];
 };
 
+export type CartagenaCategory = {
+  id: string;
+  title: string;
+  matchTime: string;
+  substitutions: string;
+  shinguards: 'Obligatorias' | 'Optativas';
+  rosterSize: string;
+  ballSize: number;
+  directGoalFromKickoff: boolean;
+  freeKickOnGoalKick: string;
+  temporaryExclusion: boolean;
+  offside: boolean;
+  goalkeeperPassBack: boolean;
+  scoreboard: string;
+};
+
 export type GeneralNote = {
   title: string;
   content: string;

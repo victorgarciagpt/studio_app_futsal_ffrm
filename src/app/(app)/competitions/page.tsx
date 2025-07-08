@@ -11,8 +11,8 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ffrmCategories, ffrmGeneralNotes } from "@/lib/data";
-import type { FFRMCategory } from "@/lib/types";
+import { ffrmCategories, ffrmGeneralNotes, cartagenaCategories, cartagenaGeneralNotes } from "@/lib/data";
+import type { FFRMCategory, CartagenaCategory } from "@/lib/types";
 import {
   ClipboardList,
   Clock,
@@ -25,6 +25,10 @@ import {
   CircleSlash,
   Users,
   Info,
+  Repeat,
+  PersonStanding,
+  RectangleHorizontal,
+  TimerOff,
 } from "lucide-react";
 
 const FutbolIcon = () => (
@@ -75,7 +79,7 @@ function CategoryRule({
   );
 }
 
-function CategoryDetails({ category }: { category: FFRMCategory }) {
+function FFRMCategoryDetails({ category }: { category: FFRMCategory }) {
   return (
     <AccordionContent className="pt-2 pb-4 px-4">
       <ul className="space-y-3 text-sm">
@@ -149,11 +153,81 @@ function CategoryDetails({ category }: { category: FFRMCategory }) {
   );
 }
 
-export default function CompetitionsPage() {
-  const [searchTerm, setSearchTerm] = useState("");
+function CartagenaCategoryDetails({ category }: { category: CartagenaCategory }) {
+  const primaryColor = 'hsl(var(--primary))';
+  const mutedColor = 'hsl(var(--muted-foreground))';
+  const destructiveColor = 'hsl(var(--destructive))';
 
-  const filteredCategories = ffrmCategories.filter((category) =>
-    category.title.toLowerCase().includes(searchTerm.toLowerCase())
+  return (
+    <AccordionContent className="pt-2 pb-4 px-4">
+      <ul className="space-y-3 text-sm">
+        <CategoryRule
+          icon={<Clock className="h-5 w-5" style={{ color: primaryColor }} />}
+          label="Tiempo de juego"
+          value={category.matchTime}
+        />
+        <CategoryRule
+          icon={<Repeat className="h-5 w-5" style={{ color: primaryColor }} />}
+          label="Sustituciones"
+          value={category.substitutions}
+        />
+        <CategoryRule
+          icon={<PersonStanding className="h-5 w-5" style={{ color: primaryColor }} />}
+          label="Espinilleras"
+          value={category.shinguards}
+        />
+        <CategoryRule
+          icon={<Users className="h-5 w-5" style={{ color: primaryColor }} />}
+          label="Fichas"
+          value={`Mínimo ${category.rosterSize.split('-')[0]}, máximo ${category.rosterSize.split('-')[1]}`}
+        />
+        <CategoryRule icon={<FutbolIcon />} label="Balón" value={`Talla ${category.ballSize}`} />
+        <CategoryRule
+          icon={category.directGoalFromKickoff ? <Goal className="h-5 w-5" style={{ color: primaryColor }} /> : <CircleSlash className="h-5 w-5" style={{ color: mutedColor }} />}
+          label="Gol directo de saque de inicio"
+          value={category.directGoalFromKickoff ? "Permitido" : "No permitido"}
+        />
+        <CategoryRule
+          icon={<RectangleHorizontal className="h-5 w-5" style={{ color: primaryColor }} />}
+          label="Saque libre en saque de meta"
+          value={category.freeKickOnGoalKick}
+        />
+        <CategoryRule
+          icon={category.temporaryExclusion ? <TimerOff className="h-5 w-5" style={{ color: destructiveColor }} /> : <TimerOff className="h-5 w-5" style={{ color: primaryColor }} />}
+          label="Exclusión temporal"
+          value={category.temporaryExclusion ? "Sí" : "No"}
+        />
+        <CategoryRule
+          icon={category.offside ? <Flag className="h-5 w-5" style={{ color: primaryColor }} /> : <FlagOff className="h-5 w-5" style={{ color: mutedColor }} />}
+          label="Fuera de juego"
+          value={category.offside ? "Sí" : "No"}
+        />
+        <CategoryRule
+          icon={category.goalkeeperPassBack ? <ShieldAlert className="h-5 w-5" style={{ color: destructiveColor }} /> : <ShieldCheck className="h-5 w-5" style={{ color: primaryColor }} />}
+          label="Cesión al portero"
+          value={category.goalkeeperPassBack ? "Infracción" : "Permitido"}
+        />
+        <CategoryRule
+          icon={<ClipboardList className="h-5 w-5" style={{ color: primaryColor }} />}
+          label="Marcador"
+          value={category.scoreboard}
+        />
+      </ul>
+    </AccordionContent>
+  );
+}
+
+
+export default function CompetitionsPage() {
+  const [ffrmSearchTerm, setFfrmSearchTerm] = useState("");
+  const [cartagenaSearchTerm, setCartagenaSearchTerm] = useState("");
+
+  const filteredFfrmCategories = ffrmCategories.filter((category) =>
+    category.title.toLowerCase().includes(ffrmSearchTerm.toLowerCase())
+  );
+  
+  const filteredCartagenaCategories = cartagenaCategories.filter((category) =>
+    category.title.toLowerCase().includes(cartagenaSearchTerm.toLowerCase())
   );
 
   return (
@@ -173,18 +247,18 @@ export default function CompetitionsPage() {
               type="search"
               placeholder="Buscar categoría FFRM..."
               className="pl-9 w-full md:w-[300px]"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
+              value={ffrmSearchTerm}
+              onChange={(e) => setFfrmSearchTerm(e.target.value)}
             />
           </div>
           <Accordion type="single" collapsible className="w-full">
-            {filteredCategories.length > 0 ? (
-              filteredCategories.map((category) => (
+            {filteredFfrmCategories.length > 0 ? (
+              filteredFfrmCategories.map((category) => (
                 <AccordionItem value={category.id} key={category.id}>
                   <AccordionTrigger className="text-left font-semibold hover:no-underline px-4">
                     {category.title}
                   </AccordionTrigger>
-                  <CategoryDetails category={category} />
+                  <FFRMCategoryDetails category={category} />
                 </AccordionItem>
               ))
             ) : (
@@ -207,18 +281,46 @@ export default function CompetitionsPage() {
               </CardContent>
             </Card>
         </TabsContent>
-        <TabsContent value="cartagena">
-          <Card>
-            <CardHeader>
-              <CardTitle>Competiciones de Cartagena</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                La información sobre las competiciones comarcales de Cartagena
-                estará disponible próximamente.
+        <TabsContent value="cartagena" className="space-y-4">
+           <div className="relative w-full md:w-auto">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+            <Input
+              type="search"
+              placeholder="Buscar categoría Cartagena..."
+              className="pl-9 w-full md:w-[300px]"
+              value={cartagenaSearchTerm}
+              onChange={(e) => setCartagenaSearchTerm(e.target.value)}
+            />
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {filteredCartagenaCategories.length > 0 ? (
+              filteredCartagenaCategories.map((category) => (
+                <AccordionItem value={category.id} key={category.id}>
+                  <AccordionTrigger className="text-left font-semibold hover:no-underline px-4">
+                    {category.title}
+                  </AccordionTrigger>
+                  <CartagenaCategoryDetails category={category} />
+                </AccordionItem>
+              ))
+            ) : (
+              <p className="text-center py-8 text-muted-foreground">
+                No se encontraron categorías.
               </p>
-            </CardContent>
-          </Card>
+            )}
+          </Accordion>
+           <Card>
+              <CardHeader>
+                <CardTitle className="font-headline text-xl">Aclaraciones Generales Liga Comarcal</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4 text-sm">
+                {cartagenaGeneralNotes.map(note => (
+                   <div key={note.title}>
+                      <h3 className="font-semibold text-primary">{note.title}</h3>
+                      <p className="text-muted-foreground whitespace-pre-wrap">{note.content}</p>
+                   </div>
+                ))}
+              </CardContent>
+            </Card>
         </TabsContent>
       </Tabs>
     </div>
