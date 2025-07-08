@@ -1,3 +1,4 @@
+
 // src/app/(app)/protocols/violencia-verbal/page.tsx
 "use client";
 
@@ -13,7 +14,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
     Clipboard,
     Megaphone,
-    MessageCircleWarning,
     PauseCircle,
     Shield,
     XCircle,
@@ -31,7 +31,7 @@ const ActaCard = ({ title, content, example }: { title: string, content: React.R
             {content}
             <div className="bg-background p-3 rounded-md">
                 <h4 className="font-semibold mb-2">Ejemplo de redacción:</h4>
-                <pre className="whitespace-pre-wrap text-xs font-code bg-gray-100 dark:bg-gray-800 p-2 rounded">
+                <pre className="whitespace-pre-wrap text-xs font-code bg-background p-2 rounded">
                     <code>{example}</code>
                 </pre>
             </div>
