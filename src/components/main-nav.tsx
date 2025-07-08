@@ -11,7 +11,7 @@ import {
 
 const navItems = [
   { href: "/competitions", icon: Trophy, label: "Competiciones" },
-  { href: "/protocols", icon: FileText, label: "Protocolos" },
+  { href: "/protocols/violencia-verbal", icon: FileText, label: "Protocolos" },
   { href: "/manuals", icon: BookOpenCheck, label: "Manual de Actas" },
   { href: "/profile", icon: UserCircle2, label: "Perfil" },
 ];

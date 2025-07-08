@@ -24,7 +24,6 @@ const sf8Notes = [
 
 
 export const ffrmCategories: FFRMCategory[] = [
-  // F11
   {
     id: '3-rfef',
     title: '3ª RFEF',
@@ -674,35 +673,6 @@ export const cartagenaGeneralNotes: GeneralNote[] = [
   }
 ];
 
-export const protocols: Document[] = [
-  {
-    id: 'protocolo-conmocion-cerebral',
-    title: 'Protocolo de Conmoción Cerebral',
-    category: 'protocols',
-    updatedAt: '2024-04-20',
-    content: `
-      <h2 class="font-headline text-2xl font-bold mb-4">1. Reconocimiento de los Síntomas</h2>
-      <p class="mb-4">Ante cualquier golpe en la cabeza, el árbitro debe detener el juego y solicitar la asistencia médica. Síntomas a observar: pérdida de conocimiento, confusión, mareos, visión borrosa, cefalea.</p>
-      <h2 class="font-headline text-2xl font-bold mb-4">2. Actuación</h2>
-      <p>Si se sospecha de una conmoción cerebral, el jugador NO PODRÁ reincorporarse al juego bajo ninguna circunstancia. El árbitro deberá reflejarlo en el acta del partido, detallando el incidente y la retirada del jugador.</p>
-    `,
-  },
-  {
-    id: 'protocolo-violencia-verbal',
-    title: 'Protocolo contra la Violencia Verbal',
-    category: 'protocols',
-    updatedAt: '2024-05-10',
-    content: `
-      <h2 class="font-headline text-2xl font-bold mb-4">Fase 1: Advertencia</h2>
-      <p class="mb-4">El árbitro advertirá al delegado de campo sobre los insultos o cánticos ofensivos provenientes de la grada. Se podrá anunciar por megafonía.</p>
-      <h2 class="font-headline text-2xl font-bold mb-4">Fase 2: Detención Temporal</h2>
-      <p class="mb-4">Si la conducta persiste, el árbitro podrá detener el partido temporalmente, enviando a los equipos a vestuarios.</p>
-      <h2 class="font-headline text-2xl font-bold mb-4">Fase 3: Suspensión</h2>
-      <p>Como última medida, si la violencia verbal no cesa, el árbitro suspenderá definitivamente el encuentro, consignando todos los hechos en el acta.</p>
-    `,
-  },
-];
-
 export const manuals: Document[] = [
   {
     id: 'redaccion-actas',
@@ -720,7 +690,7 @@ export const manuals: Document[] = [
   },
 ];
 
-export const allDocuments: Document[] = [...protocols, ...manuals];
+export const allDocuments: Document[] = [...manuals];
 
 export function getDocument(category: string, slug: string): Document | undefined {
   return allDocuments.find(doc => doc.category === category && doc.id === slug);
