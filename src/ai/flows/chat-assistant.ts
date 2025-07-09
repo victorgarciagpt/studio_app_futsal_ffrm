@@ -49,9 +49,9 @@ export async function chatAssistant(
     const data = await response.json();
     console.log('[chatAssistant] Received data from webhook:', data);
 
-    // To match the user's successful example which stringifies the response,
-    // we'll check if a 'text' property exists. If not, we format the entire JSON object.
-    const responseText = data.text || JSON.stringify(data, null, 2);
+    // Extract the response from the "myField" property, as requested.
+    // If not present, stringify the whole object as a fallback for debugging.
+    const responseText = data.myField || JSON.stringify(data, null, 2);
 
     return {
       text: responseText,
