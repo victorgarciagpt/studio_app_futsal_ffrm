@@ -34,7 +34,7 @@ const chatAssistantFlow = ai.defineFlow(
     outputSchema: ChatAssistantOutputSchema,
   },
   async (input) => {
-    const webhookUrl = 'https://n8n.tobolist.com/webhook/ae18a7ab-a533-4799-82ac-b0d7f6822284';
+    const webhookUrl = 'https://n8n.tobolist.com/webhook-test/ae18a7ab-a533-4799-82ac-b0d7f6822284';
     console.log(`[chatAssistantFlow] Calling webhook: ${webhookUrl} with message: "${input.message}"`);
 
     try {
