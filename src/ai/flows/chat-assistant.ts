@@ -35,46 +35,33 @@ const chatAssistantFlow = ai.defineFlow(
   },
   async (input) => {
     const webhookUrl = 'https://n8n.tobolist.com/webhook-test/ae18a7ab-a533-4799-82ac-b0d7f6822284';
-    console.log(`[chatAssistantFlow] Calling webhook: ${webhookUrl} with message: "${input.message}"`);
+    console.log(`[chatAssistantFlow] Attempting to send POST request to: ${webhookUrl}`);
 
     try {
-      const response = await fetch(webhookUrl, {
+      // We use fetch but don't process the response, just send the data.
+      // This is a "fire-and-forget" approach for debugging.
+      await fetch(webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ message: input.message }),
       });
-
-      console.log(`[chatAssistantFlow] Webhook response status: ${response.status}`);
-
-      if (!response.ok) {
-        const errorText = await response.text();
-        console.error(`[chatAssistantFlow] Webhook request failed with status ${response.status}. Response: ${errorText}`);
-        throw new Error(`Webhook request failed.`);
-      }
-
-      const responseData = await response.json();
-      const text = responseData.text || responseData.reply;
-
-      if (text && typeof text === 'string') {
-        return { text, citations: [] };
-      }
-
-      if (responseData.message === 'Workflow was started') {
-        return {
-          text: 'He recibido tu mensaje. El agente de n8n está procesándolo. Por favor, asegúrate de que el webhook de n8n esté configurado para esperar la ejecución y devolver el resultado.',
-          citations: [],
-        };
-      }
       
-      console.error("[chatAssistantFlow] Invalid response format from webhook:", responseData);
-      throw new Error('Invalid response format from webhook.');
+      // The request was sent. Now we wait for n8n to process it.
+      return {
+        text: 'He enviado la petición al webhook. Por favor, revisa la consola de ejecuciones de n8n para ver si ha llegado.',
+        citations: [],
+      };
 
     } catch (error: any) {
-      console.error('[chatAssistantFlow] An error occurred while calling the webhook:', error.message);
-      // Re-throwing the error ensures the client-side catch block is triggered, showing the toast message to the user.
-      throw new Error('Failed to contact the AI assistant. This might be due to network restrictions on the server.');
+      // This block will catch network errors.
+      // The most common cause is the Firebase Spark plan's network restrictions.
+      console.error('[chatAssistantFlow] A network error occurred while sending the request to the webhook:', error);
+      return {
+        text: 'Hubo un error de red al intentar contactar con el webhook. Esto puede deberse a restricciones de red en el servidor (como las del plan Spark de Firebase). Revisa los logs del servidor para más detalles.',
+        citations: [],
+      };
     }
   }
 );
