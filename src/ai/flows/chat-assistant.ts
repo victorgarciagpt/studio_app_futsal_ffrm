@@ -57,7 +57,13 @@ const chatAssistantFlow = ai.defineFlow(
     } catch (error: any) {
       // This block will catch network errors.
       // The most common cause is the Firebase Spark plan's network restrictions.
-      console.error('[chatAssistantFlow] A network error occurred while sending the request to the webhook:', error);
+      console.error('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+      console.error('[chatAssistantFlow] A CRITICAL NETWORK ERROR OCCURRED.');
+      console.error('This is very likely due to Firebase Spark Plan network restrictions, which block calls to non-Google services.');
+      console.error('Please upgrade your project to the Blaze plan to fix this.');
+      console.error('Full error details:', error);
+      console.error('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+      
       return {
         text: 'Hubo un error de red al intentar contactar con el webhook. Esto puede deberse a restricciones de red en el servidor (como las del plan Spark de Firebase). Revisa los logs del servidor para más detalles.',
         citations: [],
