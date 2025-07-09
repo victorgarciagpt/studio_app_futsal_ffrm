@@ -31,7 +31,7 @@ export function ChatMessage({ role, content }: ChatMessageProps) {
             : "bg-muted text-muted-foreground"
         )}
       >
-        <p className="text-sm">{content}</p>
+        <pre className="whitespace-pre-wrap font-sans text-sm">{content}</pre>
       </div>
       {isUser && (
         <Avatar className="h-8 w-8">
