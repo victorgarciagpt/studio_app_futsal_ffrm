@@ -38,20 +38,30 @@ const chatAssistantFlow = ai.defineFlow(
     console.log(`[chatAssistantFlow] Attempting to send POST request to: ${webhookUrl}`);
 
     try {
-      // We use fetch but don't process the response, just send the data.
-      // This is a "fire-and-forget" approach for debugging.
-      await fetch(webhookUrl, {
+      const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ message: input.message }),
       });
+
+      if (!response.ok) {
+        const errorBody = await response.text();
+        console.error(`[chatAssistantFlow] Webhook response not OK. Status: ${response.status}, Body: ${errorBody}`);
+        throw new Error(`Webhook returned a non-OK status: ${response.status}.`);
+      }
       
-      // The request was sent. Now we wait for n8n to process it.
+      const data = await response.json();
+      console.log('[chatAssistantFlow] Received data from webhook:', data);
+
+      // Assuming the webhook returns an object with a "text" property.
+      // If not, we provide a fallback.
+      const responseText = data.text || JSON.stringify(data);
+
       return {
-        text: 'He enviado la petición al webhook. Por favor, revisa la consola de ejecuciones de n8n para ver si ha llegado.',
-        citations: [],
+        text: responseText,
+        citations: data.citations || [],
       };
 
     } catch (error: any) {
@@ -64,10 +74,7 @@ const chatAssistantFlow = ai.defineFlow(
       console.error('Full error details:', error);
       console.error('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
       
-      return {
-        text: 'Hubo un error de red al intentar contactar con el webhook. Esto puede deberse a restricciones de red en el servidor (como las del plan Spark de Firebase). Revisa los logs del servidor para más detalles.',
-        citations: [],
-      };
+      throw new Error('A network error occurred while contacting the webhook. This is likely due to server network restrictions (like the Firebase Spark plan). Please check the server logs for more details.');
     }
   }
 );
