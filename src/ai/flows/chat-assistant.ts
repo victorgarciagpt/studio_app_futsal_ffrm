@@ -1,4 +1,3 @@
-// src/ai/flows/chat-assistant.ts
 'use server';
 /**
  * @fileOverview An AI assistant for referees to answer questions about rules, protocols and manuals.
@@ -28,7 +27,6 @@ export async function chatAssistant(input: ChatAssistantInput): Promise<ChatAssi
   return chatAssistantFlow(input);
 }
 
-// The prompt is no longer used, we call the webhook directly.
 const chatAssistantFlow = ai.defineFlow(
   {
     name: 'chatAssistantFlow',
@@ -36,8 +34,8 @@ const chatAssistantFlow = ai.defineFlow(
     outputSchema: ChatAssistantOutputSchema,
   },
   async (input) => {
-    // Use the production webhook URL for reliable integration.
     const webhookUrl = 'https://n8n.tobolist.com/webhook/ae18a7ab-a533-4799-82ac-b0d7f6822284';
+    console.log(`[chatAssistantFlow] Calling webhook: ${webhookUrl} with message: "${input.message}"`);
 
     try {
       const response = await fetch(webhookUrl, {
@@ -48,41 +46,35 @@ const chatAssistantFlow = ai.defineFlow(
         body: JSON.stringify({ message: input.message }),
       });
 
-      if (!response.ok) {
-        throw new Error(`Webhook request failed with status ${response.status}`);
-      }
+      console.log(`[chatAssistantFlow] Webhook response status: ${response.status}`);
 
-      // n8n might not return a body if it's set to "Respond Immediately"
-      // and the workflow is just starting. We'll check the content-length.
-      const contentType = response.headers.get("content-type");
-      if (!contentType || !contentType.includes("application/json")) {
-         return {
-            text: 'He recibido tu mensaje. El agente de n8n está procesándolo. Por favor, asegúrate de que el webhook de n8n esté configurado para devolver una respuesta con el resultado.',
-            citations: [],
-         }
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`[chatAssistantFlow] Webhook request failed with status ${response.status}. Response: ${errorText}`);
+        throw new Error(`Webhook request failed.`);
       }
 
       const responseData = await response.json();
-      
-      // We expect the webhook to return a JSON object with the response text.
-      // Common keys could be 'text' or 'reply'.
       const text = responseData.text || responseData.reply;
 
-      if (!text || typeof text !== 'string') {
-          console.error("Invalid response format from webhook:", responseData);
-          throw new Error('Invalid response format from webhook. Ensure n8n workflow is configured to return a JSON with a "text" or "reply" key.');
+      if (text && typeof text === 'string') {
+        return { text, citations: [] };
       }
 
-      return {
-        text,
-        citations: [], // Webhook does not provide citations
-      };
-    } catch (error) {
-      console.error('Error calling webhook:', error);
-      return {
-        text: 'Lo siento, ha ocurrido un error al contactar con el asistente. Por favor, inténtalo de nuevo más tarde.',
-        citations: [],
-      };
+      if (responseData.message === 'Workflow was started') {
+        return {
+          text: 'He recibido tu mensaje. El agente de n8n está procesándolo. Por favor, asegúrate de que el webhook de n8n esté configurado para esperar la ejecución y devolver el resultado.',
+          citations: [],
+        };
+      }
+      
+      console.error("[chatAssistantFlow] Invalid response format from webhook:", responseData);
+      throw new Error('Invalid response format from webhook.');
+
+    } catch (error: any) {
+      console.error('[chatAssistantFlow] An error occurred while calling the webhook:', error.message);
+      // Re-throwing the error ensures the client-side catch block is triggered, showing the toast message to the user.
+      throw new Error('Failed to contact the AI assistant. This might be due to network restrictions on the server.');
     }
   }
 );
