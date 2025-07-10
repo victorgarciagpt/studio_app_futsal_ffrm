@@ -27,7 +27,7 @@ export async function chatAssistant(
   input: ChatAssistantInput
 ): Promise<ChatAssistantOutput> {
   const webhookUrl =
-    'https://n8n.tobolist.com/webhook-test/ae18a7ab-a533-4799-82ac-b0d7f6822284';
+    'https://n8n.tobolist.com/webhook/ae18a7ab-a533-4799-82ac-b0d7f6822284';
   
   console.log(`[chatAssistant] Attempting to send POST request to: ${webhookUrl}`);
 
@@ -46,16 +46,12 @@ export async function chatAssistant(
       throw new Error(`Webhook returned a non-OK status: ${response.status}.`);
     }
     
-    const data = await response.json();
-    console.log('[chatAssistant] Received data from webhook:', data);
-
-    // Extract the response from the "myField" property, as requested.
-    // If not present, stringify the whole object as a fallback for debugging.
-    const responseText = data.myField || JSON.stringify(data, null, 2);
+    const responseText = await response.text();
+    console.log('[chatAssistant] Received text from webhook:', responseText);
 
     return {
       text: responseText,
-      citations: data.citations || [],
+      citations: [], // Citations are not expected in the new format
     };
 
   } catch (error: any) {
