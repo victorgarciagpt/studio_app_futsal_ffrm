@@ -53,6 +53,9 @@ export function UserNav() {
           <DropdownMenuItem asChild>
             <Link href="/profile">Perfil</Link>
           </DropdownMenuItem>
+          <DropdownMenuItem asChild>
+            <Link href="/feedback">Feedback y Soporte</Link>
+          </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
