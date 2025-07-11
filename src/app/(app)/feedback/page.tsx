@@ -15,7 +15,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { cn } from "@/lib/utils";
-import { sendFeedback } from "./actions";
+import { sendFeedback } from "../actions";
 import { Loader2 } from "lucide-react";
 
 
