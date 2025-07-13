@@ -20,6 +20,8 @@ export function ChatPanel() {
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
+  // Generate a unique session ID once per component mount
+  const [sessionId] = useState(() => crypto.randomUUID());
 
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
@@ -48,6 +50,7 @@ export function ChatPanel() {
         uid: "test-user",
         locale: "es-ES",
         message: input,
+        sessionId: sessionId, // Send the session ID with each request
       });
 
       if (response) {
@@ -66,7 +69,8 @@ export function ChatPanel() {
         title: "Error",
         description: "No se pudo obtener una respuesta del asistente.",
       });
-      setMessages((prev) => prev.slice(0, -1));
+      // Optional: remove the user's message if the call fails
+      // setMessages((prev) => prev.slice(0, -1));
     } finally {
       setIsLoading(false);
     }

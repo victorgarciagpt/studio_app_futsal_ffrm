@@ -14,6 +14,7 @@ const ChatAssistantInputSchema = z.object({
   uid: z.string().describe('The user ID of the referee.'),
   locale: z.string().describe('The locale of the referee.'),
   message: z.string().describe('The message from the referee.'),
+  sessionId: z.string().describe('A unique identifier for the current chat session.'),
 });
 export type ChatAssistantInput = z.infer<typeof ChatAssistantInputSchema>;
 
@@ -30,6 +31,8 @@ export async function chatAssistant(
     'https://n8n.tobolist.com/webhook/ae18a7ab-a533-4799-82ac-b0d7f6822284';
   
   console.log(`[chatAssistant] Attempting to send POST request to: ${webhookUrl}`);
+  console.log(`[chatAssistant] Payload:`, JSON.stringify(input, null, 2));
+
 
   try {
     const response = await fetch(webhookUrl, {
@@ -37,7 +40,8 @@ export async function chatAssistant(
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ message: input.message }),
+      // Send the entire input object, which now includes sessionId
+      body: JSON.stringify(input),
     });
 
     if (!response.ok) {
