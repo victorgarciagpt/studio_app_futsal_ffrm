@@ -6,7 +6,7 @@ export function FfrmLogo(props: SVGProps<SVGSVGElement>) {
   // The 'alt' prop is important for accessibility.
   return (
     <Image
-      src="https://i.imgur.com/gA3G5Y7.png"
+      src="https://i.imgur.com/ir9706D.png"
       alt="FFRM Logo"
       width={100}
       height={100}
