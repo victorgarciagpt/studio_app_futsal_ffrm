@@ -1,3 +1,4 @@
+gitignore
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
@@ -43,3 +44,7 @@ next-env.d.ts
 # firebase
 firebase-debug.log
 firestore-debug.log
+# Ignorar archivos grandes generados por Firebase Functions
+.firebase/cta-ffrm-app/functions/.next/
+.firebase/cta-ffrm-app/functions/node_modules/
+.firebase
