@@ -1,53 +1,26 @@
 gitignore
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Node.js
+node_modules/
 
-# dependencies
-/node_modules
-/.pnp
-.pnp.*
-.yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/versions
+# Next.js build output
+.next/
 
-# testing
-/coverage
+# Firebase cache and generated files
+.firebase/
+!.firebase/.firebaserc
+!.firebase/firebase.json
 
-# next.js
-/.next/
-/out/
+# Common build and distribution directories
+build/
+dist/
 
-# production
-/build
+# Log files
+*.log
 
-# misc
-.DS_Store
-*.pem
+# dotenv files
+.env
+.env.*
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-.genkit/*
-.env*
-
-# firebase
-firebase-debug.log
-firestore-debug.log
-# Ignorar archivos grandes generados por Firebase Functions
-.firebase/cta-ffrm-app/functions/.next/
-.firebase/cta-ffrm-app/functions/node_modules/
-.firebase
-gitignore
-    .firebase/cta-ffrm-app/functions/.next/cache/
-    .firebase/cta-ffrm-app/functions/node_modules/
+# local .vscode settings
+.vscode/*.json
+!.vscode/settings.json
