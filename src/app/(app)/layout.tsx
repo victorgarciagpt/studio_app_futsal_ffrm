@@ -10,7 +10,6 @@ import {
 import { MainNav } from "@/components/main-nav";
 import { UserNav } from "@/components/user-nav";
 import { FfrmLogo } from "@/components/icons/ffrm-logo";
-import { ChatWidget } from "@/components/chat/chat-widget";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -36,7 +35,6 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             </header>
           <SidebarInset>
             {children}
-            <ChatWidget />
           </SidebarInset>
         </div>
       </div>

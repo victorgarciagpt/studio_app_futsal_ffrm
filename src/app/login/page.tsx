@@ -29,7 +29,7 @@ export default function LoginPage() {
               <Input id="pin" type="password" placeholder="••••••" required maxLength={6} />
             </div>
             <Button type="submit" className="w-full" asChild>
-              <Link href="/competitions">Entrar</Link>
+              <Link href="/dashboard">Entrar</Link>
             </Button>
           </div>
         </CardContent>
