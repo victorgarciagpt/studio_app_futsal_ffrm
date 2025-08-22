@@ -8,21 +8,21 @@ import { Button } from "@/components/ui/button";
 import { Send, Loader2 } from "lucide-react";
 import { ChatMessage } from "./chat-message";
 import { useToast } from "@/hooks/use-toast";
+import type { Message, Conversation } from "@/lib/types";
 
-type Message = {
-  role: "user" | "assistant";
-  content: string;
+type ChatPanelProps = {
+  conversation: Conversation;
+  allConversations: Conversation[];
+  saveConversations: (conversations: Conversation[]) => void;
 };
 
-export function ChatPanel() {
-  const [messages, setMessages] = useState<Message[]>([]);
+export function ChatPanel({ conversation, allConversations, saveConversations }: ChatPanelProps) {
+  const [messages, setMessages] = useState<Message[]>(conversation.messages);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const scrollAreaRef = useRef<HTMLDivElement>(null);
-  // Generate a unique session ID once per component mount
-  const [sessionId] = useState(() => crypto.randomUUID());
-
+  
   const scrollToBottom = () => {
     if (scrollAreaRef.current) {
         const viewport = scrollAreaRef.current.querySelector('div[data-radix-scroll-area-viewport]');
@@ -41,7 +41,8 @@ export function ChatPanel() {
     if (!input.trim() || isLoading) return;
 
     const userMessage: Message = { role: "user", content: input };
-    setMessages((prev) => [...prev, userMessage]);
+    const newMessages = [...messages, userMessage];
+    setMessages(newMessages);
     setInput("");
     setIsLoading(true);
 
@@ -50,7 +51,7 @@ export function ChatPanel() {
         uid: "test-user",
         locale: "es-ES",
         message: input,
-        sessionId: sessionId, // Send the session ID with each request
+        sessionId: conversation.id, 
       });
 
       if (response) {
@@ -58,7 +59,14 @@ export function ChatPanel() {
           role: "assistant",
           content: response.text,
         };
-        setMessages((prev) => [...prev, assistantMessage]);
+        const finalMessages = [...newMessages, assistantMessage];
+        setMessages(finalMessages);
+        
+        // Update and save conversation
+        const updatedConversation: Conversation = { ...conversation, messages: finalMessages, timestamp: new Date() };
+        const otherConversations = allConversations.filter(c => c.id !== conversation.id);
+        const sortedConversations = [...otherConversations, updatedConversation].sort((a, b) => new Date(b.timestamp!).getTime() - new Date(a.timestamp!).getTime());
+        saveConversations(sortedConversations);
       } else {
         throw new Error("No response from AI assistant");
       }
@@ -69,8 +77,6 @@ export function ChatPanel() {
         title: "Error",
         description: "No se pudo obtener una respuesta del asistente.",
       });
-      // Optional: remove the user's message if the call fails
-      // setMessages((prev) => prev.slice(0, -1));
     } finally {
       setIsLoading(false);
     }
@@ -80,13 +86,20 @@ export function ChatPanel() {
     <div className="flex flex-1 flex-col h-full">
         <ScrollArea className="flex-1 p-4" ref={scrollAreaRef}>
             <div className="space-y-6">
-            <ChatMessage role="assistant" content="Hola, soy el asistente de la FFRM. ¿En qué puedo ayudarte hoy?" />
+            {messages.length === 0 && (
+                <ChatMessage role="assistant" content="Hola, soy el asistente de la FFRM. ¿En qué puedo ayudarte hoy?" />
+            )}
             {messages.map((message, index) => (
                 <ChatMessage key={index} {...message} />
             ))}
             {isLoading && (
-                <div className="flex justify-start">
-                    <Loader2 className="h-6 w-6 animate-spin text-primary" />
+                <div className="flex justify-start items-center gap-4">
+                  <div className="h-8 w-8 border rounded-full flex items-center justify-center">
+                    <Loader2 className="h-4 w-4 animate-spin text-primary" />
+                  </div>
+                  <div className="bg-muted text-muted-foreground p-3 rounded-lg">
+                    <span className="animate-pulse">Pensando...</span>
+                  </div>
                 </div>
             )}
             </div>

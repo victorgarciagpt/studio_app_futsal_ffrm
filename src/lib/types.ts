@@ -39,3 +39,14 @@ export type GeneralNote = {
   title: string;
   content: string;
 };
+
+export type Message = {
+  role: "user" | "assistant";
+  content: string;
+};
+
+export type Conversation = {
+  id: string;
+  messages: Message[];
+  timestamp?: Date;
+};
