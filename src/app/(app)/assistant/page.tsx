@@ -3,7 +3,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { ChatPanel } from "@/components/chat/chat-panel";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ConversationHistory } from "@/components/chat/conversation-history";
 import type { Conversation } from "@/lib/types";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
@@ -74,6 +74,15 @@ export default function AssistantPage() {
           <TabsContent value="chat" className="flex-1 mt-4 flex flex-col">
             {currentConversation ? (
               <Card className="h-full flex flex-col overflow-hidden">
+                   <CardHeader className="flex flex-row items-center justify-between p-4 border-b">
+                    <CardTitle className="text-lg font-semibold">
+                      Conversación
+                    </CardTitle>
+                    <Button onClick={handleNewConversation} size="icon" variant="ghost">
+                      <Plus className="h-5 w-5" />
+                      <span className="sr-only">Nueva Conversación</span>
+                    </Button>
+                  </CardHeader>
                   <ChatPanel
                     key={currentConversation.id}
                     conversation={currentConversation}
