@@ -9,10 +9,13 @@ import type { Conversation } from "@/lib/types";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { Plus } from "lucide-react";
 
 export default function AssistantPage() {
   const [conversations, setConversations] = useState<Conversation[]>([]);
   const [currentConversationId, setCurrentConversationId] = useState<string | null>(null);
+  const [activeTab, setActiveTab] = useState("chat");
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -28,9 +31,9 @@ export default function AssistantPage() {
   }, []);
 
   const saveConversations = useCallback((updatedConversations: Conversation[]) => {
-    // Sort by timestamp and keep only the last 3 conversations
-    const sorted = updatedConversations.sort((a, b) => new Date(a.timestamp!).getTime() - new Date(b.timestamp!).getTime());
-    const conversationsToSave = sorted.slice(-3);
+    // Sort by timestamp desc and keep only the last 3 conversations
+    const sorted = updatedConversations.sort((a, b) => new Date(b.timestamp!).getTime() - new Date(a.timestamp!).getTime());
+    const conversationsToSave = sorted.slice(0, 3);
     setConversations(conversationsToSave);
     localStorage.setItem("chatHistory", JSON.stringify(conversationsToSave));
   }, []);
@@ -38,10 +41,16 @@ export default function AssistantPage() {
   const handleNewConversation = () => {
     const newId = crypto.randomUUID();
     setCurrentConversationId(newId);
+    if (isMobile) {
+      setActiveTab("chat");
+    }
   };
   
   const handleSelectConversation = (id: string) => {
     setCurrentConversationId(id);
+    if (isMobile) {
+      setActiveTab("chat");
+    }
   };
 
   const currentConversation = conversations.find(c => c.id === currentConversationId) || (currentConversationId ? { id: currentConversationId, messages: [] } : null);
@@ -57,26 +66,30 @@ export default function AssistantPage() {
             Chatea con el asistente para resolver dudas.
             </p>
         </div>
-        <Tabs defaultValue="chat" className="flex-1 flex flex-col p-4">
+        <Tabs value={activeTab} onValueChange={setActiveTab} className="flex-1 flex flex-col p-4">
           <TabsList className="grid w-full grid-cols-2">
             <TabsTrigger value="chat">Chat</TabsTrigger>
             <TabsTrigger value="history">Historial</TabsTrigger>
           </TabsList>
-          <TabsContent value="chat" className="flex-1 mt-4">
-            <Card className="h-full flex flex-col overflow-hidden">
-                {currentConversation ? (
+          <TabsContent value="chat" className="flex-1 mt-4 flex flex-col">
+            {currentConversation ? (
+              <Card className="h-full flex flex-col overflow-hidden">
                   <ChatPanel
                     key={currentConversation.id}
                     conversation={currentConversation}
                     allConversations={conversations}
                     saveConversations={saveConversations}
                   />
-                ) : (
-                  <div className="h-full flex items-center justify-center text-muted-foreground text-center p-4">
-                    <p>Selecciona una conversación del historial o empieza una nueva.</p>
-                  </div>
-                )}
-            </Card>
+              </Card>
+            ) : (
+               <Card className="h-full flex flex-col overflow-hidden items-center justify-center text-center p-4">
+                  <p className="text-muted-foreground mb-4">Empieza una nueva conversación para chatear con el asistente.</p>
+                  <Button onClick={handleNewConversation}>
+                    <Plus className="mr-2 h-4 w-4" />
+                    Nueva Conversación
+                  </Button>
+               </Card>
+            )}
           </TabsContent>
           <TabsContent value="history" className="flex-1 mt-4">
             <ConversationHistory
