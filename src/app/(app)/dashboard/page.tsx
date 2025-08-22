@@ -23,7 +23,7 @@ const menuItems = [
   },
   {
     title: "Asistente IA",
-    description: "Resuelve tus dudas sobre reglamento al instante.",
+    description: "Resuelve tus dudas sobre Redacciones de actas, Competiciones o Protocolos.",
     href: "/assistant",
     icon: MessageCircle,
   },
