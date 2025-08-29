@@ -11,31 +11,31 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ffrmCategories, ffrmGeneralNotes, cartagenaCategories, cartagenaGeneralNotes } from "@/lib/data";
-import type { FFRMCategory, CartagenaCategory } from "@/lib/types";
+import { futsalCategories, ffrmGeneralNotes } from "@/lib/data";
+import type { FutsalCategory } from "@/lib/types";
 import {
   ClipboardList,
   Clock,
-  Flag,
-  FlagOff,
-  Goal,
   Search,
-  ShieldAlert,
-  ShieldCheck,
-  CircleSlash,
   Users,
   Info,
-  Repeat,
+  ShieldCheck,
+  Building,
+  Shirt,
+  Goal,
+  Timer,
   PersonStanding,
-  RectangleHorizontal,
-  TimerOff,
+  AlertTriangle,
+  Scale,
+  Handshake,
+  FileText
 } from "lucide-react";
 
-const FutbolIcon = () => (
+const FutsalIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
+    width="24"
+    height="24"
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
@@ -44,21 +44,12 @@ const FutbolIcon = () => (
     strokeLinejoin="round"
     className="h-5 w-5 text-primary"
   >
-    <line x1="12" x2="12" y1="2" y2="4"></line>
-    <line x1="12" x2="12" y1="20" y2="22"></line>
-    <line x1="20" x2="22" y1="12" y2="12"></line>
-    <line x1="2" x2="4" y1="12" y2="12"></line>
-    <line x1="19.07" x2="20.48" y1="4.93" y2="3.51"></line>
-    <line x1="3.52" x2="4.93" y1="20.48" y2="19.07"></line>
-    <line x1="4.93" x2="3.51" y1="4.93" y2="3.51"></line>
-    <line x1="20.48" x2="19.07" y1="20.48" y2="19.07"></line>
-    <circle cx="12" cy="12" r="10"></circle>
-    <path d="M8.56 2.75 12 12l3.44-9.25"></path>
-    <path d="m15.44 21.25-3.44-9.25-3.44 9.25"></path>
-    <path d="M21.25 8.56 12 12l9.25 3.44"></path>
-    <path d="m2.75 15.44 9.25-3.44-9.25-3.44"></path>
+    <path d="M12 12a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
+    <path d="M12 19a7 7 0 1 0 0-14 7 7 0 0 0 0 14z" />
+    <path d="M18.36 5.64 12 12" />
   </svg>
 );
+
 
 function CategoryRule({
   icon,
@@ -79,71 +70,88 @@ function CategoryRule({
   );
 }
 
-function FFRMCategoryDetails({ category }: { category: FFRMCategory }) {
+function FFRMFutsalCategoryDetails({ category }: { category: FutsalCategory }) {
   return (
     <AccordionContent className="pt-2 pb-4 px-4">
-      <ul className="space-y-3 text-sm">
+      <ul className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-6 text-sm">
         <CategoryRule
-          icon={<Users className="h-5 w-5 text-primary" />}
-          label="Sustituciones"
-          value={category.substitutions}
+          icon={<Scale className="h-5 w-5 text-primary" />}
+          label="Regulador"
+          value={category.regulador}
         />
         <CategoryRule
-          icon={
-            category.offside ? (
-              <Flag className="h-5 w-5 text-primary" />
-            ) : (
-              <FlagOff className="h-5 w-5 text-muted-foreground" />
-            )
-          }
-          label="Fuera de juego"
-          value={category.offside ? "Sí" : "No"}
-        />
-        <CategoryRule
-          icon={
-            category.goalkeeperPassBack ? (
-              <ShieldAlert className="h-5 w-5 text-destructive" />
-            ) : (
-              <ShieldCheck className="h-5 w-5" style={{ color: 'hsl(var(--primary))' }} />
-            )
-          }
-          label="Cesión al portero"
-          value={category.goalkeeperPassBack ? "Infracción" : "Permitido"}
-        />
-        <CategoryRule
-          icon={
-            category.directGoalFromKickoff ? (
-              <Goal className="h-5 w-5 text-primary" />
-            ) : (
-              <CircleSlash className="h-5 w-5 text-muted-foreground" />
-            )
-          }
-          label="Gol desde saque de centro"
-          value={category.directGoalFromKickoff ? "Permitido" : "No permitido"}
-        />
-        <CategoryRule
-          icon={<ClipboardList className="h-5 w-5 text-primary" />}
-          label="Fichas"
-          value={`Mínimo ${category.rosterSize.split('-')[0]}, máximo ${category.rosterSize.split('-')[1]}`}
-        />
-        <CategoryRule
-          icon={<FutbolIcon />}
+          icon={<FutsalIcon />}
           label="Balón"
-          value={`Talla ${category.ballSize}`}
+          value={category.balon}
         />
         <CategoryRule
           icon={<Clock className="h-5 w-5 text-primary" />}
-          label="Tiempo"
-          value={category.matchTime}
+          label="Tiempo de Juego"
+          value={category.tiempoJuego}
+        />
+        <CategoryRule
+          icon={<Timer className="h-5 w-5 text-primary" />}
+          label="Tiempo Muerto"
+          value={category.tiempoMuerto}
+        />
+         <CategoryRule
+          icon={<Users className="h-5 w-5 text-primary" />}
+          label="Nº Jugadores"
+          value={`${category.jugadores} (${category.minJugadores} para iniciar)`}
+        />
+        <CategoryRule
+          icon={<ClipboardList className="h-5 w-5 text-primary" />}
+          label="Confirmación Actas"
+          value={category.confirmacionActas}
+        />
+        <CategoryRule
+          icon={<AlertTriangle className="h-5 w-5 text-primary" />}
+          label="Normativa Específica Expulsión"
+          value={category.normativaEspecifica}
+        />
+        <CategoryRule
+          icon={<Goal className="h-5 w-5 text-primary" />}
+          label="Porterías"
+          value={category.porterias}
+        />
+        <CategoryRule
+          icon={<PersonStanding className="h-5 w-5 text-primary" />}
+          label="Presencia Arbitral"
+          value={category.presenciaArbitral}
+        />
+        <CategoryRule
+          icon={<Building className="h-5 w-5 text-primary" />}
+          label="Llegada a Instalaciones"
+          value={category.llegadaInstalaciones}
+        />
+        <CategoryRule
+          icon={<ShieldCheck className="h-5 w-5 text-primary" />}
+          label="Regla Pasarela"
+          value={category.reglaPasarela ? "Sí" : "No"}
+        />
+        <CategoryRule
+          icon={<Shirt className="h-5 w-5 text-primary" />}
+          label="Regla +10 Goles"
+          value={category.reglaDiferencia10Goles ? "Sí" : "No"}
+        />
+         <CategoryRule
+          icon={<FileText className="h-5 w-5 text-primary" />}
+          label="Saque de Meta"
+          value={category.saqueMeta}
+        />
+         <CategoryRule
+          icon={<FileText className="h-5 w-5 text-primary" />}
+          label="Cesión al Portero"
+          value={category.cesionPortero}
         />
       </ul>
-      {category.notes && category.notes.length > 0 && (
+      {category.notas && category.notas.length > 0 && (
         <div className="mt-4 border-t pt-4">
           <h4 className="font-semibold mb-2 text-primary flex items-center gap-2">
             <Info className="h-5 w-5" /> Notas Adicionales
           </h4>
           <ul className="list-disc pl-6 space-y-1 text-sm text-muted-foreground">
-            {category.notes.map((note, index) => (
+            {category.notas.map((note, index) => (
               <li key={index}>{note}</li>
             ))}
           </ul>
@@ -153,92 +161,28 @@ function FFRMCategoryDetails({ category }: { category: FFRMCategory }) {
   );
 }
 
-function CartagenaCategoryDetails({ category }: { category: CartagenaCategory }) {
-  const primaryColor = 'hsl(var(--primary))';
-  const mutedColor = 'hsl(var(--muted-foreground))';
-  const destructiveColor = 'hsl(var(--destructive))';
-
-  return (
-    <AccordionContent className="pt-2 pb-4 px-4">
-      <ul className="space-y-3 text-sm">
-        <CategoryRule
-          icon={<Clock className="h-5 w-5" style={{ color: primaryColor }} />}
-          label="Tiempo de juego"
-          value={category.matchTime}
-        />
-        <CategoryRule
-          icon={<Repeat className="h-5 w-5" style={{ color: primaryColor }} />}
-          label="Sustituciones"
-          value={category.substitutions}
-        />
-        <CategoryRule
-          icon={<PersonStanding className="h-5 w-5" style={{ color: primaryColor }} />}
-          label="Espinilleras"
-          value={category.shinguards}
-        />
-        <CategoryRule
-          icon={<Users className="h-5 w-5" style={{ color: primaryColor }} />}
-          label="Fichas"
-          value={`Mínimo ${category.rosterSize.split('-')[0]}, máximo ${category.rosterSize.split('-')[1]}`}
-        />
-        <CategoryRule icon={<FutbolIcon />} label="Balón" value={`Talla ${category.ballSize}`} />
-        <CategoryRule
-          icon={category.directGoalFromKickoff ? <Goal className="h-5 w-5" style={{ color: primaryColor }} /> : <CircleSlash className="h-5 w-5" style={{ color: mutedColor }} />}
-          label="Gol directo de saque de inicio"
-          value={category.directGoalFromKickoff ? "Permitido" : "No permitido"}
-        />
-        <CategoryRule
-          icon={<RectangleHorizontal className="h-5 w-5" style={{ color: primaryColor }} />}
-          label="Saque libre en saque de meta"
-          value={category.freeKickOnGoalKick}
-        />
-        <CategoryRule
-          icon={category.temporaryExclusion ? <TimerOff className="h-5 w-5" style={{ color: destructiveColor }} /> : <TimerOff className="h-5 w-5" style={{ color: primaryColor }} />}
-          label="Exclusión temporal"
-          value={category.temporaryExclusion ? "Sí" : "No"}
-        />
-        <CategoryRule
-          icon={category.offside ? <Flag className="h-5 w-5" style={{ color: primaryColor }} /> : <FlagOff className="h-5 w-5" style={{ color: mutedColor }} />}
-          label="Fuera de juego"
-          value={category.offside ? "Sí" : "No"}
-        />
-        <CategoryRule
-          icon={category.goalkeeperPassBack ? <ShieldAlert className="h-5 w-5" style={{ color: destructiveColor }} /> : <ShieldCheck className="h-5 w-5" style={{ color: primaryColor }} />}
-          label="Cesión al portero"
-          value={category.goalkeeperPassBack ? "Infracción" : "Permitido"}
-        />
-        <CategoryRule
-          icon={<ClipboardList className="h-5 w-5" style={{ color: primaryColor }} />}
-          label="Marcador"
-          value={category.scoreboard}
-        />
-      </ul>
-    </AccordionContent>
-  );
-}
-
 
 export default function CompetitionsPage() {
   const [ffrmSearchTerm, setFfrmSearchTerm] = useState("");
   const [cartagenaSearchTerm, setCartagenaSearchTerm] = useState("");
 
-  const filteredFfrmCategories = ffrmCategories.filter((category) =>
+  const filteredFfrmCategories = futsalCategories.filter((category) =>
     category.title.toLowerCase().includes(ffrmSearchTerm.toLowerCase())
   );
   
-  const filteredCartagenaCategories = cartagenaCategories.filter((category) =>
-    category.title.toLowerCase().includes(cartagenaSearchTerm.toLowerCase())
-  );
+  // const filteredCartagenaCategories = cartagenaCategories.filter((category) =>
+  //   category.title.toLowerCase().includes(cartagenaSearchTerm.toLowerCase())
+  // );
 
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
       <h1 className="text-3xl font-bold tracking-tight font-headline">
-        Competiciones
+        Competiciones de Fútbol Sala
       </h1>
       <Tabs defaultValue="ffrm">
-        <TabsList className="grid w-full grid-cols-2 md:w-[400px]">
-          <TabsTrigger value="ffrm">FFRM</TabsTrigger>
-          <TabsTrigger value="cartagena">Comarcal Cartagena</TabsTrigger>
+        <TabsList className="grid w-full grid-cols-1 md:w-[400px]">
+          <TabsTrigger value="ffrm">Competiciones FFRM</TabsTrigger>
+          {/* <TabsTrigger value="cartagena">Comarcal Cartagena</TabsTrigger> */}
         </TabsList>
         <TabsContent value="ffrm" className="space-y-4">
           <div className="relative w-full md:w-auto">
@@ -256,9 +200,12 @@ export default function CompetitionsPage() {
               filteredFfrmCategories.map((category) => (
                 <AccordionItem value={category.id} key={category.id}>
                   <AccordionTrigger className="text-left font-semibold hover:no-underline px-4">
-                    {category.title}
+                     <div className="flex items-center gap-3">
+                        <FutsalIcon />
+                        <span>{category.title} ({category.regulador})</span>
+                     </div>
                   </AccordionTrigger>
-                  <FFRMCategoryDetails category={category} />
+                  <FFRMFutsalCategoryDetails category={category} />
                 </AccordionItem>
               ))
             ) : (
@@ -269,7 +216,7 @@ export default function CompetitionsPage() {
           </Accordion>
            <Card>
               <CardHeader>
-                <CardTitle className="font-headline text-xl">Aclaraciones Generales FFRM</CardTitle>
+                <CardTitle className="font-headline text-xl">Aclaraciones Generales Fútbol Sala (Categorías Regionales)</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 text-sm">
                 {ffrmGeneralNotes.map(note => (
@@ -281,7 +228,7 @@ export default function CompetitionsPage() {
               </CardContent>
             </Card>
         </TabsContent>
-        <TabsContent value="cartagena" className="space-y-4">
+        {/* <TabsContent value="cartagena" className="space-y-4">
            <div className="relative w-full md:w-auto">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -299,7 +246,6 @@ export default function CompetitionsPage() {
                   <AccordionTrigger className="text-left font-semibold hover:no-underline px-4">
                     {category.title}
                   </AccordionTrigger>
-                  <CartagenaCategoryDetails category={category} />
                 </AccordionItem>
               ))
             ) : (
@@ -321,7 +267,7 @@ export default function CompetitionsPage() {
                 ))}
               </CardContent>
             </Card>
-        </TabsContent>
+        </TabsContent> */}
       </Tabs>
     </div>
   );
