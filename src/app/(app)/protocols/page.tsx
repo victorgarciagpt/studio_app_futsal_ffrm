@@ -11,13 +11,19 @@ const protocols = [
     description: 'Medidas efectivas para combatir las amenazas, insultos y manifestaciones intolerantes.',
     updatedAt: '2024-07-20',
   },
+  {
+    id: 'circular-n1',
+    title: 'Circular Nº 1 (Temporada 2024/2025)',
+    description: 'Normativa general y de obligado cumplimiento para el colectivo arbitral.',
+    updatedAt: '2024-07-26',
+  },
   // Se pueden añadir más protocolos aquí en el futuro
 ];
 
 export default function ProtocolsPage() {
   return (
     <div className="flex-1 space-y-4 p-4 md:p-8 pt-6">
-      <h1 className="text-3xl font-bold tracking-tight font-headline">Protocolos</h1>
+      <h1 className="text-3xl font-bold tracking-tight font-headline">Circulares y protocolos</h1>
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {protocols.map((protocol) => (
           <Link href={`/protocols/${protocol.id}`} key={protocol.id} className="block hover:no-underline">

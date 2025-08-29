@@ -12,7 +12,7 @@ import {
 const navItems = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Inicio" },
   { href: "/competitions", icon: Trophy, label: "Competiciones" },
-  { href: "/protocols", icon: FileText, label: "Protocolos" },
+  { href: "/protocols", icon: FileText, label: "Circulares y protocolos" },
   { href: "/manuals", icon: BookOpenCheck, label: "Manual de Actas" },
   { href: "/assistant", icon: MessageCircle, label: "Asistente IA" },
   { href: "/profile", icon: UserCircle2, label: "Perfil" },
