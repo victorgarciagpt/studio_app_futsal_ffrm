@@ -28,7 +28,7 @@ export async function chatAssistant(
   input: ChatAssistantInput
 ): Promise<ChatAssistantOutput> {
   const webhookUrl =
-    'https://n8n.tobolist.com/webhook/ae18a7ab-a533-4799-82ac-b0d7f6822284';
+    'https://n8n.tobolist.com/webhook/43aaf5f7-d4ac-42ab-8873-6fee422a2ac4';
   
   console.log(`[chatAssistant] Attempting to send POST request to: ${webhookUrl}`);
   console.log(`[chatAssistant] Payload:`, JSON.stringify(input, null, 2));
