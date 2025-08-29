@@ -181,11 +181,46 @@ export default function CircularN1Page() {
                         <Point title="22">Es obligatorio redactar todas las tarjetas (amarillas y rojas) en el acta, indicando motivo y minuto.</Point>
                         <Point title="23">Si el acta online falla, debe finalizarse lo antes posible en otro lugar. El plazo para un anexo es de 24h.</Point>
                         <Point title="24">Cualquier irregularidad en las instalaciones que no impida jugar debe constar en el acta.</Point>
-                        <Point title="25">Los encuentros deben confirmarse en la intranet antes del jueves.</Point>
-                        <Point title="29">Se detalla la uniformidad reglamentaria, colores y marcas por categoría (Macron, Fibranet).</Point>
-                        <Point title="30">Los árbitros pueden usar las pistas de atletismo de Monte-Romero gratuitamente.</Point>
-                        <Point title="31">Se especifican los hospitales concertados para asistencia médica urgente y el procedimiento a seguir.</Point>
-                        <Point title="40">Se detalla la normativa sobre el Entrenador en Prácticas según la categoría.</Point>
+                        <SubSectionTitle>5. Gestiones en las Oficinas del Comité</SubSectionTitle>
+                        <Point title="25">Todos los encuentros deberán estar confirmados en el programa de intranet durante el día del Jueves. Aquellos/as que no lo hagan, se entenderá como rechazo de dicho nombramiento.</Point>
+                        <Point title="26">
+                            <strong>Teléfonos de contacto y correos electrónicos:</strong>
+                             <ul className="list-none pl-4 mt-2 space-y-1">
+                                <ListItem><strong>Teléfono Oficina:</strong> 968229552</ListItem>
+                                <ListItem><strong>Correo electrónico:</strong> arbitrosfutbolsala@ffrm.es</ListItem>
+                                <ListItem><strong>Alejandro Martínez Flores (Coordinador):</strong> 670 88 47 39</ListItem>
+                                <ListItem><strong>Francisco José Lorca Pérez (Secretario):</strong> 667 76 87 67</ListItem>
+                                <ListItem><strong>Ángel Alberto Cerezo Martínez (Preparador Físico):</strong> 646 02 82 33</ListItem>
+                            </ul>
+                        </Point>
+                        <Point title="27">
+                           <strong>Correspondencia:</strong> COMITÉ TERRITORIAL DE ÁRBITROS DE FÚTBOL SALA. APARTADO DE CORREOS 4733. 30.080 Murcia.
+                        </Point>
+                        <Point title="29">
+                            <strong>Uniformidad:</strong> Se detalla la ropa reglamentaria (Macron), colores y marcas por categoría (con o sin publicidad de Fibranet) y la combinación de medias. Las zapatillas serán blancas, salvo las entregadas por el Comité Nacional.
+                        </Point>
+                        <Point title="30">
+                            <strong>Pistas de Atletismo:</strong> Los árbitros pueden usar las pistas de atletismo de Monte-Romero (Espinardo) gratuitamente.
+                        </Point>
+                        <Point title="31">
+                            <strong>Asistencia Médica Urgente:</strong> Se especifican los hospitales concertados (Hospital de Molina de Segura, Virgen de la Caridad en Cartagena, Virgen del Alcázar en Lorca, San José de Alcantarilla) y el procedimiento a seguir. Es obligatorio comunicar las bajas y altas médicas al Comité.
+                        </Point>
+                         <SubSectionTitle>6. Otros</SubSectionTitle>
+                        <Point title="36">
+                            <strong>Redes Sociales:</strong> Página Web: http://www.ffrm.es, Twitter: @ffrm_es
+                        </Point>
+                         <Point title="37">
+                            <strong>Horario de Oficina:</strong> Lunes a Jueves de 8:00 a 15:00, Viernes de 8:00 a 14:00. Tardes solo Miércoles de 16:00 a 19:00.
+                        </Point>
+                        <Point title="38">
+                            Se lista la composición de los Miembros del Comité de Árbitros de Fútbol Sala.
+                        </Point>
+                        <Point title="40">
+                           <strong>Licencia de entrenador:</strong> Se detalla la normativa sobre el Entrenador en Prácticas según la categoría (Nacional o Territorial).
+                        </Point>
+                        <Point title="Firma del acta del delegado">
+                           Antes de enviar el acta los delegados deberán leerla y firmar con su código. En caso de no firmar, se deberá seleccionar el motivo en la lista desplegable de la aplicación.
+                        </Point>
                     </CardContent>
                 </Card>
             </div>
