@@ -181,6 +181,7 @@ export default function CircularN1Page() {
                         <Point title="22">Es obligatorio redactar todas las tarjetas (amarillas y rojas) en el acta, indicando motivo y minuto.</Point>
                         <Point title="23">Si el acta online falla, debe finalizarse lo antes posible en otro lugar. El plazo para un anexo es de 24h.</Point>
                         <Point title="24">Cualquier irregularidad en las instalaciones que no impida jugar debe constar en el acta.</Point>
+                        
                         <SubSectionTitle>5. Gestiones en las Oficinas del Comité</SubSectionTitle>
                         <Point title="25">Todos los encuentros deberán estar confirmados en el programa de intranet durante el día del Jueves. Aquellos/as que no lo hagan, se entenderá como rechazo de dicho nombramiento.</Point>
                         <Point title="26">
@@ -205,7 +206,8 @@ export default function CircularN1Page() {
                         <Point title="31">
                             <strong>Asistencia Médica Urgente:</strong> Se especifican los hospitales concertados (Hospital de Molina de Segura, Virgen de la Caridad en Cartagena, Virgen del Alcázar en Lorca, San José de Alcantarilla) y el procedimiento a seguir. Es obligatorio comunicar las bajas y altas médicas al Comité.
                         </Point>
-                         <SubSectionTitle>6. Otros</SubSectionTitle>
+                        
+                        <SubSectionTitle>6. Otros</SubSectionTitle>
                         <Point title="36">
                             <strong>Redes Sociales:</strong> Página Web: http://www.ffrm.es, Twitter: @ffrm_es
                         </Point>
@@ -213,11 +215,22 @@ export default function CircularN1Page() {
                             <strong>Horario de Oficina:</strong> Lunes a Jueves de 8:00 a 15:00, Viernes de 8:00 a 14:00. Tardes solo Miércoles de 16:00 a 19:00.
                         </Point>
                         <Point title="38">
-                            Se lista la composición de los Miembros del Comité de Árbitros de Fútbol Sala.
+                           <strong>Miembros del Comité:</strong> Se lista la composición de los Miembros del Comité de Árbitros de Fútbol Sala: Alejandro Martínez Flores (Coordinador), Noelia Clemente Gutiérrez (Vocal), Antonio Almagro Lajarin (Vocal), Andrés Botella López (Vocal), Ángel Alberto Cerezo Martínez (Vocal), Alejandro Martínez Flores (Vocal), Ramón Martínez Martínez (Vocal), Ana Hurtado Cárceles (Vocal), Irene Hurtado Cárceles (Vocal), José Antonio Sánchez López (Vocal), Francisco José Lorca Pérez (Secretario).
                         </Point>
                         <Point title="40">
                            <strong>Licencia de entrenador:</strong> Se detalla la normativa sobre el Entrenador en Prácticas según la categoría (Nacional o Territorial).
                         </Point>
+                        
+                        <SubSectionTitle>7. Licencia de Entrenador</SubSectionTitle>
+                         <h4 className="font-semibold text-lg mt-4">Categorías nacionales de 1ª, 2ª, 2ª División “B”, División de Honor Juvenil, 1ª Div. Femenina y 2ª Div. Femenina</h4>
+                        <p>Si aparece un Entrenador en Prácticas, NO podrá ejercer como primer entrenador.</p>
+                        <h4 className="font-semibold text-lg mt-4">Categoría Nacional de 3ª División y Territoriales</h4>
+                        <ul className="list-disc pl-6 mt-2 space-y-1">
+                            <ListItem>El entrenador en prácticas a tales efectos ejerce como 2º entrenador.</ListItem>
+                            <ListItem>Solo puede haber un 1er entrenador y un 2º Entrenador (o entrenador en prácticas).</ListItem>
+                            <ListItem>No podrá sentarse en el banquillo un entrenador en prácticas si ya hay un 2º entrenador.</ListItem>
+                            <ListItem>En el caso de que no haya 1er entrenador, el 2º entrenador o el entrenador en prácticas podrá levantarse a dar instrucciones.</ListItem>
+                        </ul>
                         <Point title="Firma del acta del delegado">
                            Antes de enviar el acta los delegados deberán leerla y firmar con su código. En caso de no firmar, se deberá seleccionar el motivo en la lista desplegable de la aplicación.
                         </Point>
