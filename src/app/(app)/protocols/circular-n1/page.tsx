@@ -12,10 +12,14 @@ const SubSectionTitle = ({ children }: { children: React.ReactNode }) => (
     <h3 className="text-xl font-semibold font-headline mt-6 mb-3">{children}</h3>
 );
 
-const Point = ({ title, children }: { title: string, children: React.ReactNode }) => (
+const Point = ({ title, children }: { title: React.ReactNode, children: React.ReactNode }) => (
     <div className="mb-4">
         <p><strong className="font-semibold">{title})</strong> {children}</p>
     </div>
+)
+
+const ListItem = ({ children }: { children: React.ReactNode }) => (
+    <li className="mb-2">{children}</li>
 )
 
 export default function CircularN1Page() {
@@ -84,7 +88,7 @@ export default function CircularN1Page() {
 
                         <Point title="7">En todos los encuentros antes de comenzar el partido, se procederá a realizar una revisión de identidad en el vestuario arbitral.</Point>
                         
-                        <h4 className="font-semibold text-lg mt-4">2.5. Normativa previa antes del inicio del encuentro.</h4>
+                        <SubSectionTitle>2.5. Normativa previa antes del inicio del encuentro.</SubSectionTitle>
                         <Point title="8">
                             <strong>Instalaciones Deportivas:</strong> Las líneas de marcación tendrán una anchura que oscila entre 5 y 8 centímetros. La mesa del árbitro asistente se situará a una distancia mínima de 50 centímetros hasta la línea de banda. Las porterías podrán ser fijas al suelo ó móviles.
                         </Point>
@@ -119,8 +123,37 @@ export default function CircularN1Page() {
                         <Point title="16">
                            <strong>Expulsiones con inferioridad numérica:</strong> Se aplicarán los 2 minutos con un jugador menos solo en 1ª, 2ª, 2ªB, 3ª División, D.H. Juvenil, 1ª y 2ª Div. Femenina, Campeonatos de España, Preferente Masculino, Liga Autonómica Juvenil y D.H. Cadete.
                         </Point>
-                         <Point title="17, 32 y 33">
-                           <strong>Tiempos de Juego:</strong> Se detalla la duración y formato (reloj parado/corrido) para cada una de las categorías.
+                        <Point title="17, 32 y 33">
+                            <strong>Tiempos de Juego:</strong>
+                            <ul className="list-disc pl-6 mt-2 space-y-1">
+                                <ListItem><strong>Primera División Masculina:</strong> 2 tiempos de 20 minutos a reloj parado.</ListItem>
+                                <ListItem><strong>Segunda División Masculina:</strong> 2 tiempos de 20 minutos a reloj parado.</ListItem>
+                                <ListItem><strong>Segunda División "B":</strong> 2 tiempos de 20 minutos a reloj parado.</ListItem>
+                                <ListItem><strong>Tercera División Nacional:</strong> 2 tiempos de 20 minutos a reloj parado.</ListItem>
+                                <ListItem><strong>Preferente Autonómica Masculino:</strong> 2 tiempos de 20 minutos a reloj parado.</ListItem>
+                                <ListItem><strong>1ª y 3ª Autonómica:</strong> 2 tiempos de 30 minutos a reloj corrido (o 2x20 parado con asistente).</ListItem>
+                                <ListItem><strong>División de Honor Juvenil:</strong> 2 tiempos de 20 minutos a reloj parado.</ListItem>
+                                <ListItem><strong>Liga Autonómica Juvenil:</strong> 2 tiempos de 20 minutos a reloj parado.</ListItem>
+                                <ListItem><strong>1ª y 2ª Juvenil:</strong> 2 tiempos de 30 minutos a reloj corrido (o 2x20 parado con asistente).</ListItem>
+                                <ListItem><strong>División de Honor Cadete:</strong> 2 tiempos de 20 minutos a reloj parado.</ListItem>
+                                <ListItem><strong>Liga Autonómica Cadete:</strong> 2 tiempos de 30 minutos a reloj corrido (o 2x20 parado con asistente).</ListItem>
+                                <ListItem><strong>Segunda Cadete:</strong> 2 tiempos de 25 minutos a reloj corrido (o 2x15 parado con asistente).</ListItem>
+                                <ListItem><strong>Infantil (DH y Autonómica):</strong> 2 tiempos de 30 minutos a reloj corrido (o 2x20 parado con asistente).</ListItem>
+                                <ListItem><strong>Segunda Infantil:</strong> 2 tiempos de 25 minutos a reloj corrido (o 2x15 parado con asistente).</ListItem>
+                                <ListItem><strong>Alevín (DH, Autonómica y 1ª):</strong> 2x30min corrido (Regla Pasarela: 4 periodos de 5-5-5-15 min).</ListItem>
+                                <ListItem><strong>2ª Alevín:</strong> 2x25min corrido (Regla Pasarela: 4 periodos de 5-5-5-10 min).</ListItem>
+                                <ListItem><strong>Benjamín (DH, Autonómica y 1ª):</strong> 2x30min corrido (Regla Pasarela: 4 periodos de 5-5-5-15 min).</ListItem>
+                                <ListItem><strong>2ª Benjamín:</strong> 2x25min corrido (Regla Pasarela: 4 periodos de 5-5-5-10 min).</ListItem>
+                                <ListItem><strong>Prebenjamín (todas):</strong> 2x25min corrido (Regla Pasarela: 4 periodos de 5-5-5-10 min).</ListItem>
+                                <ListItem><strong>Debutantes:</strong> 2x20min corrido (Regla Pasarela: 4 periodos de 5 min).</ListItem>
+                                <ListItem><strong>Femenino (1ª y 2ª Div):</strong> 2 tiempos de 20 minutos a reloj parado.</ListItem>
+                                <ListItem><strong>Femenino (Preferente, Juv/Cad):</strong> 2x30min corrido (o 2x20 parado con asistente).</ListItem>
+                                <ListItem><strong>Femenino (Infantil y Alevín):</strong> 2x25min corrido (o 2x15 parado con asistente). Alevín con Regla Pasarela.</ListItem>
+                                <ListItem><strong>Femenino (Benjamín):</strong> 2x25min corrido (Regla Pasarela: 4 periodos de 5-5-5-10 min).</ListItem>
+                            </ul>
+                        </Point>
+                        <Point title="Regla Pasarela">
+                            Aplicable en Alevín, Benjamín, Prebenjamín y Debutantes. Todos los jugadores deben jugar al menos uno de los 3 primeros periodos. En el 4º periodo, los cambios son volantes. Es obligatorio reflejar el cumplimiento de esta norma en el acta.
                         </Point>
                         <Point title="18">
                            <strong>Diferencia de 10 Goles:</strong> En categorías masculinas Infantil, Alevín, Benjamín, Prebenjamín y en todas las femeninas, al alcanzar una diferencia de 10 goles, no se anotarán más en el marcador.
@@ -130,6 +163,12 @@ export default function CircularN1Page() {
                         </Point>
                         <Point title="20">
                            Será obligatorio en todos los encuentros, antes del inicio del encuentro, realizar el saludo fair play.
+                        </Point>
+                        <Point title="34">
+                           <strong>Porterías Reductoras:</strong> En todas las categorías Benjamín, Prebenjamín y Debutantes, las porterías tendrán una reducción de 30 cm. Es obligatorio, y si no se cumple, el partido no se disputará.
+                        </Point>
+                        <Point title="35">
+                           <strong>Sustitución de jugadores:</strong> La sustitución será efectiva cuando el jugador sustituido abandone la pista por su zona y el suplente ingrese posteriormente. El jugador suplente deberá entregar el peto al sustituido.
                         </Point>
                     </CardContent>
                 </Card>
@@ -147,7 +186,6 @@ export default function CircularN1Page() {
                         <Point title="30">Los árbitros pueden usar las pistas de atletismo de Monte-Romero gratuitamente.</Point>
                         <Point title="31">Se especifican los hospitales concertados para asistencia médica urgente y el procedimiento a seguir.</Point>
                         <Point title="40">Se detalla la normativa sobre el Entrenador en Prácticas según la categoría.</Point>
-
                     </CardContent>
                 </Card>
             </div>
