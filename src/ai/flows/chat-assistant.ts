@@ -50,11 +50,13 @@ export async function chatAssistant(
       throw new Error(`Webhook returned a non-OK status: ${response.status}.`);
     }
     
-    const responseText = await response.text();
-    console.log('[chatAssistant] Received text from webhook:', responseText);
+    const responseData = await response.json();
+    console.log('[chatAssistant] Received JSON from webhook:', responseData);
+
+    const outputText = responseData.output || "No se ha recibido una respuesta válida.";
 
     return {
-      text: responseText,
+      text: outputText,
       citations: [], // Citations are not expected in the new format
     };
 
