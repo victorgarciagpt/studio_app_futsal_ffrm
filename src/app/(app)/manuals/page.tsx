@@ -1,4 +1,4 @@
-import { manuals } from "@/lib/data";
+import { manuals } from "@/data/manuals";
 import { DocumentListPage } from "@/components/document-list-page";
 
 export default function ManualsPage() {

@@ -11,7 +11,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { futsalCategories, ffrmGeneralNotes } from "@/lib/data";
+import { futsalCategories, ffrmGeneralNotes } from "@/data/competitions";
 import type { FutsalCategory } from "@/lib/types";
 import {
   ClipboardList,
