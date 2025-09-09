@@ -2,15 +2,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { AlertTriangle } from "lucide-react";
-
-
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-    <h2 className="text-2xl font-bold font-headline mt-8 mb-4 text-primary">{children}</h2>
-);
-
-const SubSectionTitle = ({ children }: { children: React.ReactNode }) => (
-    <h3 className="text-xl font-semibold font-headline mt-6 mb-3">{children}</h3>
-);
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 const Point = ({ title, children }: { title: React.ReactNode, children: React.ReactNode }) => (
     <div className="mb-4">
@@ -40,20 +32,20 @@ export default function CircularN1Page() {
                 </CardContent>
             </Card>
 
-            <div>
-                <SectionTitle>1. Obligaciones Arbítrales desde el Nombramiento hasta la Llegada</SectionTitle>
-                <Card>
-                    <CardContent className="pt-6 space-y-4">
+            <Accordion type="single" collapsible className="w-full space-y-4">
+                <AccordionItem value="item-1" className="border rounded-lg">
+                    <AccordionTrigger className="text-lg font-semibold text-primary p-4 hover:no-underline">1. Obligaciones Arbítrales desde el Nombramiento hasta la Llegada</AccordionTrigger>
+                    <AccordionContent className="p-6 pt-0">
                         <p>Es obligación que el Árbitro contacte con él segundo árbitro y árbitro asistente designado, al menos 48 horas antes de los partidos, así como recogerlo desde el punto de encuentro hasta las Instalaciones deportivas y vuelta.</p>
                         <p>En la categoría de 1ª División, el Tercer Árbitro será el encargado de ponerse en contacto con los árbitros, el / la árbitro asistente, al menos 48 horas antes del inicio del partido. Los 4 miembros del cuerpo arbitral, entrarán juntos a las instalaciones deportivas.</p>
                         <p>En la categoría de 2ª División, el Tercer Árbitro, será el encargado de ponerse en contacto con los árbitros, el / la árbitro asistente, al menos 48 horas antes del inicio del partido. Los 4 miembros del cuerpo arbitral, entrarán juntos a las instalaciones deportivas.</p>
                         
-                        <SubSectionTitle>5) Llegada a las Instalaciones Deportivas</SubSectionTitle>
+                        <h3 className="text-xl font-semibold font-headline mt-6 mb-3">5) Llegada a las Instalaciones Deportivas</h3>
                         <p>En las categorías de Primera, Segunda División es de 3 horas en la localidad del encuentro y 1 hora 30 minutos en las instalaciones deportivas, en 2ª División “B” y 1ª División femenina será de 2 horas en la localidad del encuentro y 1 hora 30 minutos en las instalaciones deportivas</p>
                         <p>En el resto de categorías no hay antelación mínima en la localidad, únicamente se deberá llegar a las instalaciones del encuentro con 1 hora de antelación.</p>
                         <p>En cualquier categoría, cuando se llegue a las instalaciones deportivas nos presentaremos al Conserje de las Instalaciones y a los delegados de equipo.</p>
                         
-                        <Alert variant="destructive">
+                        <Alert variant="destructive" className="mt-4">
                             <AlertTriangle className="h-4 w-4" />
                             <AlertTitle>Importante</AlertTitle>
                             <AlertDescription>
@@ -61,14 +53,12 @@ export default function CircularN1Page() {
                                 <p className="mt-2">En caso de que, por cualquier circunstancia, avería del coche en la carretera, no localizar la instalación deportiva, etc.), impida al árbitro encontrarse en las instalaciones deportivas con el tiempo de antelación correspondiente. Se tendrá que notificar en ese momento esta circunstancia llamando al teléfono del Secretario.</p>
                             </AlertDescription>
                         </Alert>
-                    </CardContent>
-                </Card>
-            </div>
-            
-            <div>
-                <SectionTitle>2. Obligaciones Arbítrales en las Instalaciones</SectionTitle>
-                 <Card>
-                    <CardContent className="pt-6 space-y-4">
+                    </AccordionContent>
+                </AccordionItem>
+                
+                <AccordionItem value="item-2" className="border rounded-lg">
+                    <AccordionTrigger className="text-lg font-semibold text-primary p-4 hover:no-underline">2. Obligaciones Arbítrales en las Instalaciones</AccordionTrigger>
+                     <AccordionContent className="p-6 pt-0 space-y-4">
                         <Point title="6">Licencias Federativas, número máximo de jugadores, Actas.</Point>
                         
                         <h4 className="font-semibold text-lg">2.1. Licencias</h4>
@@ -88,7 +78,7 @@ export default function CircularN1Page() {
 
                         <Point title="7">En todos los encuentros antes de comenzar el partido, se procederá a realizar una revisión de identidad en el vestuario arbitral.</Point>
                         
-                        <SubSectionTitle>2.5. Normativa previa antes del inicio del encuentro.</SubSectionTitle>
+                        <h3 className="text-xl font-semibold font-headline mt-6 mb-3">2.5. Normativa previa antes del inicio del encuentro.</h3>
                         <Point title="8">
                             <strong>Instalaciones Deportivas:</strong> Las líneas de marcación tendrán una anchura que oscila entre 5 y 8 centímetros. La mesa del árbitro asistente se situará a una distancia mínima de 50 centímetros hasta la línea de banda. Las porterías podrán ser fijas al suelo ó móviles.
                         </Point>
@@ -110,13 +100,12 @@ export default function CircularN1Page() {
                         <Point title="14">
                             <strong>Mínimo de Jugadores:</strong> 3 jugadores para iniciar un partido tanto en categorías Nacionales como Regionales.
                         </Point>
-                    </CardContent>
-                </Card>
-            </div>
-             <div>
-                <SectionTitle>3. Normativa Específica de los Encuentros</SectionTitle>
-                 <Card>
-                    <CardContent className="pt-6 space-y-4">
+                    </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="border rounded-lg">
+                    <AccordionTrigger className="text-lg font-semibold text-primary p-4 hover:no-underline">3. Normativa Específica de los Encuentros</AccordionTrigger>
+                     <AccordionContent className="p-6 pt-0 space-y-4">
                         <Point title="15">
                            <strong>Brazalete:</strong> El capitán debe llevar el distintivo. Los árbitros menores de edad llevarán un brazalete identificativo.
                         </Point>
@@ -170,19 +159,18 @@ export default function CircularN1Page() {
                         <Point title="35">
                            <strong>Sustitución de jugadores:</strong> La sustitución será efectiva cuando el jugador sustituido abandone la pista por su zona y el suplente ingrese posteriormente. El jugador suplente deberá entregar el peto al sustituido.
                         </Point>
-                    </CardContent>
-                </Card>
-            </div>
-            <div>
-                <SectionTitle>4. Normativa Post-Partido y Gestiones</SectionTitle>
-                 <Card>
-                    <CardContent className="pt-6 space-y-4">
+                    </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="border rounded-lg">
+                    <AccordionTrigger className="text-lg font-semibold text-primary p-4 hover:no-underline">4. Normativa Post-Partido y Gestiones</AccordionTrigger>
+                    <AccordionContent className="p-6 pt-0 space-y-4">
                         <Point title="21">El pago de los encuentros lo hará la Federación por transferencia.</Point>
                         <Point title="22">Es obligatorio redactar todas las tarjetas (amarillas y rojas) en el acta, indicando motivo y minuto.</Point>
                         <Point title="23">Si el acta online falla, debe finalizarse lo antes posible en otro lugar. El plazo para un anexo es de 24h.</Point>
                         <Point title="24">Cualquier irregularidad en las instalaciones que no impida jugar debe constar en el acta.</Point>
                         
-                        <SubSectionTitle>5. Gestiones en las Oficinas del Comité</SubSectionTitle>
+                        <h3 className="text-xl font-semibold font-headline mt-6 mb-3">5. Gestiones en las Oficinas del Comité</h3>
                         <Point title="25">Todos los encuentros deberán estar confirmados en el programa de intranet durante el día del Jueves. Aquellos/as que no lo hagan, se entenderá como rechazo de dicho nombramiento.</Point>
                         <Point title="26">
                             <strong>Teléfonos de contacto y correos electrónicos:</strong>
@@ -207,7 +195,7 @@ export default function CircularN1Page() {
                             <strong>Asistencia Médica Urgente:</strong> Se especifican los hospitales concertados (Hospital de Molina de Segura, Virgen de la Caridad en Cartagena, Virgen del Alcázar en Lorca, San José de Alcantarilla) y el procedimiento a seguir. Es obligatorio comunicar las bajas y altas médicas al Comité.
                         </Point>
                         
-                        <SubSectionTitle>6. Otros</SubSectionTitle>
+                        <h3 className="text-xl font-semibold font-headline mt-6 mb-3">6. Otros</h3>
                         <Point title="36">
                             <strong>Redes Sociales:</strong> Página Web: http://www.ffrm.es, Twitter: @ffrm_es
                         </Point>
@@ -221,7 +209,7 @@ export default function CircularN1Page() {
                            <strong>Licencia de entrenador:</strong> Se detalla la normativa sobre el Entrenador en Prácticas según la categoría (Nacional o Territorial).
                         </Point>
                         
-                        <SubSectionTitle>7. Licencia de Entrenador</SubSectionTitle>
+                        <h3 className="text-xl font-semibold font-headline mt-6 mb-3">7. Licencia de Entrenador</h3>
                          <h4 className="font-semibold text-lg mt-4">Categorías nacionales de 1ª, 2ª, 2ª División “B”, División de Honor Juvenil, 1ª Div. Femenina y 2ª Div. Femenina</h4>
                         <p>Si aparece un Entrenador en Prácticas, NO podrá ejercer como primer entrenador.</p>
                         <h4 className="font-semibold text-lg mt-4">Categoría Nacional de 3ª División y Territoriales</h4>
@@ -234,9 +222,9 @@ export default function CircularN1Page() {
                         <Point title="Firma del acta del delegado">
                            Antes de enviar el acta los delegados deberán leerla y firmar con su código. En caso de no firmar, se deberá seleccionar el motivo en la lista desplegable de la aplicación.
                         </Point>
-                    </CardContent>
-                </Card>
-            </div>
+                    </AccordionContent>
+                </AccordionItem>
+            </Accordion>
         </div>
     );
 }
