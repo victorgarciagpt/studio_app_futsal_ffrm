@@ -33,7 +33,7 @@ export const otrasIncidenciasJugadores: Document = {
         <div class="border rounded-lg">
           <div data-orientation="vertical" data-state="closed" class="border-b">
               <h3 class="flex flex-1 items-center justify-between py-4 px-4 font-medium text-lg">
-                  3.3.2 Tipos de Incidencias
+                  3.3.2. Tipos de Incidencias
               </h3>
           </div>
           <div class="p-6 pt-2">
@@ -222,7 +222,22 @@ export const otrasIncidenciasJugadores: Document = {
                     <h4 class="font-semibold text-foreground mt-4 mb-2">B. Sustitución adicional por conmoción cerebral</h4>
                     <p>Las competiciones tienen la opción de permitir que los equipos hagan una sustitución adicional (y una oportunidad/ventana de sustitución adicional, si corresponde) si uno de los jugadores sufre una conmoción o se sospecha que la ha sufrido. Cuando se haga uso de una sustitución por conmoción cerebral, el equipo contrario dispondrá automáticamente de un sustituto adicional y recibirá una oportunidad de sustitución adicional. Esta oportunidad adicional solamente se podrá utilizar para una sustitución adicional, no para sustituciones normales.</p>
                     <p class="font-semibold text-foreground mt-2 mb-2">Ejemplo de redacción:</p>
-                    <pre class="bg-muted/50 p-4 rounded-md whitespace-pre-wrap font-code"><code>“Debido a una conmoción cerebral (o sospecha de esta) el equipo local realiza la siguiente sustitución adicional: Entra el dorsal nºX y sale el dorsal nºY en el minuto Z’.\n\nComo resultado de la sustitución adicional por conmoción cerebral concedida al equipo local, el equipo visitante realiza la siguiente sustitución adicional por su parte: Entra el dorsal nºX y sale el dorsal nºY en el minuto Z’”</code></pre>
+                    <pre class="bg-muted/50 p-4 rounded-md whitespace-pre-wrap font-code"><code>“Debido a una conmoción cerebral (o sospecha de esta) el equipo local realiza la siguiente sustitución adicional: Entra el dorsal nºX y sale el dorsal nºY en el minuto Z’.\n\nComo resultado de la sustitución adicional por conmoción cerebral concedida al equipo local, el equipo visitante realiza la siguiente sustitución adicional por su parte: Entra el dorsal nºX y sale el dorsal nºY en el minuto Z’.”</code></pre>
+                  </div>
+                </details>
+              </div>
+
+               <div class="border-b">
+                <details class="group">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                    K) Participación jugadores Regla Pasarela
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+                  </summary>
+                  <div class="pb-4 text-sm text-muted-foreground">
+                    <p class="font-semibold text-foreground mt-4 mb-2">Ejemplo en el que hayan participado todos los jugadores:</p>
+                    <pre class="bg-muted/50 p-4 rounded-md whitespace-pre-wrap font-code"><code>"Todos los jugadores de ambos equipos cumplieron la normativa de las reglas pasarela, disputando un mínimo de un periodo completo en los tres primeros periodos de cada parte del encuentro."</code></pre>
+                    <p class="font-semibold text-foreground mt-4 mb-2">Ejemplo en el que NO hayan participado todos los jugadores:</p>
+                    <pre class="bg-muted/50 p-4 rounded-md whitespace-pre-wrap font-code"><code>"El jugador con Dorsal Nº 9 del equipo visitante XX, D. ……………, no participó un periodo completo en la 2ª Parte del encuentro."</code></pre>
                   </div>
                 </details>
               </div>
@@ -265,7 +280,7 @@ export const otrasIncidenciasJugadores: Document = {
         <div class="border rounded-lg">
           <div data-orientation="vertical" data-state="closed" class="border-b">
               <h3 class="flex flex-1 items-center justify-between py-4 px-4 font-medium text-lg">
-                  3.3.4 Nota Importante
+                  3.3.4. Nota Importante
               </h3>
           </div>
           <div class="p-6 pt-2">
@@ -280,5 +295,7 @@ export const otrasIncidenciasJugadores: Document = {
       </div>
     `
 };
+
+    
 
     
