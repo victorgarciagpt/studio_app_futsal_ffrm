@@ -6,6 +6,12 @@ import { ArrowLeft } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 type DocumentPageProps = {
   params: {
@@ -13,6 +19,16 @@ type DocumentPageProps = {
     slug: string;
   };
 };
+
+// This is a simplified parser. For a real app, you might want a more robust solution.
+function renderContent(content: string) {
+    if (content.includes('<div data-orientation="vertical"')) {
+        return <div dangerouslySetInnerHTML={{ __html: content }} />;
+    }
+    
+    // Fallback for old content format
+    return <div className="prose dark:prose-invert max-w-none" dangerouslySetInnerHTML={{ __html: content }} />;
+}
 
 export default async function DocumentPage({ params }: DocumentPageProps) {
   const doc = getDocument(params.category, params.slug);
@@ -38,12 +54,11 @@ export default async function DocumentPage({ params }: DocumentPageProps) {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div
-            className="prose dark:prose-invert max-w-none"
-            dangerouslySetInnerHTML={{ __html: doc.content }}
-          />
+          {renderContent(doc.content)}
         </CardContent>
       </Card>
     </div>
   );
 }
+
+    
