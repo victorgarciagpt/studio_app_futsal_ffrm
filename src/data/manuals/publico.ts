@@ -123,23 +123,93 @@ Apartado "Otras Incidencias": "Debido a los incidentes reflejados anteriormente,
             </ul>
           </div>
         </details>
-        
-        <details class="group border rounded-lg p-4">
-          <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-lg text-primary">
-            Protocolo de Actuación sobre la Violencia Verbal
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
-          </summary>
-          <div class="mt-4 text-muted-foreground space-y-2">
-            <p>Se considera violencia verbal: insultos, amenazas graves, y manifestaciones racistas, xenófobas, sexistas o intolerantes de forma continuada. En caso de incidentes racistas, el árbitro debe realizar el gesto universal (cruzar los antebrazos frente al pecho).</p>
-            <p class="font-semibold text-foreground mt-4 mb-2">Medidas de Actuación:</p>
-            <ul class="list-disc pl-5 space-y-1">
-              <li><strong>Medida 1: Detención del Partido.</strong> Aviso al delegado para advertencia por megafonía.</li>
-              <li><strong>Medida 2: Suspensión Temporal.</strong> Retirada a vestuarios si persiste la conducta.</li>
-              <li><strong>Medida 3: Suspensión Definitiva.</strong> Si no cesa la violencia o es reincidente.</li>
-            </ul>
-          </div>
-        </details>
 
+        <details class="group border rounded-lg p-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-lg text-primary">
+                Protocolo de Actuación sobre la Violencia Verbal
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+            </summary>
+            <div class="mt-4 text-muted-foreground space-y-4">
+                <p>La violencia verbal en el fútbol, manifestada a través de insultos, amenazas y comentarios racistas, xenófobos, sexistas o intolerantes, es una problemática prioritaria para erradicar. El Comité Técnico de Árbitros de la RFEF ha establecido un protocolo detallado para abordar este tipo de incidentes, con el objetivo de garantizar la integridad de todos los participantes y espectadores.</p>
+
+                <details class="group border-t pt-4">
+                    <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-foreground">Definición de Violencia Verbal<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg></summary>
+                    <div class="mt-2 text-muted-foreground space-y-2">
+                        <p>Se considera violencia verbal:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li>Insultos dirigidos a jugadores, entrenadores, árbitros u otras personas.</li>
+                            <li>Amenazas graves.</li>
+                            <li>Manifestaciones racistas, xenófobas, sexistas o de cualquier índole intolerante proferidas de forma continuada.</li>
+                        </ul>
+                        <p>En caso de incidentes racistas, se activa una medida adicional obligatoria:</p>
+                        <ul class="list-disc pl-5 space-y-1">
+                           <li><strong>Gesto Universal:</strong> El árbitro deberá cruzar los antebrazos frente al pecho formando una "X", indicando que el incidente tiene una naturaleza racista y el protocolo se activa específicamente por ello.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="group border-t pt-4">
+                    <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-foreground">Aspectos a Reflejar en el Acta<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg></summary>
+                    <div class="mt-2 text-muted-foreground space-y-2">
+                        <p>Cuando se produce un incidente de violencia verbal, el árbitro deberá incluir los siguientes detalles en el acta:</p>
+                         <ul class="list-disc pl-5 space-y-1">
+                            <li>Momento del incidente: Minuto exacto y si ocurrió tras un gol, durante una pausa, etc.</li>
+                            <li>Descripción literal de los insultos/gritos: Incluir palabras o frases exactas proferidas.</li>
+                            <li>Identificación del sector involucrado: Determinar a qué equipo pertenecen los responsables y cómo fueron identificados (indumentaria, cánticos, ubicación en la grada, etc.).</li>
+                            <li>Tipo de violencia verbal: Racista, xenófoba, sexista, intolerante, insultos generales, etc.</li>
+                            <li>Medidas tomadas: Detallar si se activó el protocolo, incluyendo el gesto universal en casos de racismo, si se detuvo el partido, duración de la detención, advertencias realizadas y medios empleados (megafonía, delegado de campo, etc.).</li>
+                            <li>Resolución del incidente: Si se reanudó el partido o si fue suspendido temporal o definitivamente.</li>
+                            <li>Estado del partido al momento del incidente: Posesión del balón, posición en el terreno, tiempo restante, resultado, etc.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="group border-t pt-4">
+                    <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-foreground">Medidas de Actuación<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg></summary>
+                    <div class="mt-2 text-muted-foreground space-y-4">
+                        <div>
+                            <h4 class="font-semibold text-foreground">Medida 1: Detención del Partido</h4>
+                            <p>El árbitro detendrá el partido, comunicará el incidente al delegado de campo y ordenará una advertencia a los responsables mediante megafonía o personalmente. En incidentes racistas, se deberá realizar el gesto universal cruzando los antebrazos frente al pecho para que quede constancia visual de la naturaleza del incidente.</p>
+                            <p class="font-semibold text-foreground mt-2">Ejemplo de Redacción:</p>
+                            <pre class="bg-muted/50 p-2 rounded-md whitespace-pre-wrap font-code text-sm"><code>"En el minuto 34 del partido, activé el protocolo de violencia verbal debido a gritos continuados de un sector del público identificado como aficionados del equipo local por su indumentaria y cánticos. Dichos gritos incluían expresiones como: 'Árbitro, vete a tu país', 'Eres un inútil' y 'No tienes ni idea'.
+Por tratarse de un incidente racista, realicé el gesto universal cruzando los antebrazos frente al pecho para informar de la naturaleza del incidente.
+Tras ello, me dirigí al delegado de campo, quien procedió a advertir por megafonía que cesaran esta conducta. El partido estuvo detenido durante 5 minutos hasta que cesaron los insultos, momento en el cual se reanudó."</code></pre>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground">Medida 2: Suspensión Temporal del Partido</h4>
+                            <p>Si los insultos persisten tras la advertencia, el árbitro suspenderá temporalmente el partido y pedirá a los equipos que se retiren a los vestuarios. En incidentes racistas, el árbitro deberá repetir el gesto universal si los insultos continúan.</p>
+                            <p class="font-semibold text-foreground mt-2">Ejemplo de Redacción:</p>
+                            <pre class="bg-muted/50 p-2 rounded-md whitespace-pre-wrap font-code text-sm"><code>"En el minuto 45, y tras haber advertido anteriormente sobre los insultos de carácter xenófobo ('Vete a tu país') proferidos desde la grada sur por aficionados locales, estos continuaron con frases como: '¡No te queremos aquí!' y '¡Lárgate, moreno!’.
+Por tratarse de un incidente racista, repetí el gesto universal cruzando los antebrazos frente al pecho para reforzar la gravedad del incidente.
+Ante la gravedad del incidente y su persistencia, decidí suspender temporalmente el partido, invitando a ambos equipos a retirarse a los vestuarios. El delegado de campo volvió a realizar una advertencia por megafonía. Tras una pausa de 10 minutos y con la intervención de la fuerza pública, quienes garantizaron nuestra seguridad, el partido se reanudó sin más incidentes."</code></pre>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-foreground">Medida 3: Suspensión Definitiva del Partido</h4>
+                            <p>Si los insultos no cesan tras aplicar las medidas anteriores o si se produce una reincidencia grave, el árbitro suspenderá definitivamente el partido.</p>
+                            <p class="font-semibold text-foreground mt-2">Ejemplo de Redacción:</p>
+                             <pre class="bg-muted/50 p-2 rounded-md whitespace-pre-wrap font-code text-sm"><code>"En el minuto 60 del partido, y tras haber aplicado previamente las medidas 1 y 2, los insultos de carácter racista proferidos desde la grada sur continuaron. Algunos de los gritos identificados fueron: 'Mono', 'Eres un negro de mierda' y 'Devuélvete a tu jungla'.
+Por tratarse de un incidente racista, realicé nuevamente el gesto universal cruzando los antebrazos frente al pecho.
+Ante la imposibilidad de controlar la situación y tras la evaluación de la fuerza pública, quienes comunicaron que no podían garantizar nuestra seguridad, decidí suspender definitivamente el partido.
+La Suspensión del partido se debe reflejar en el apartado ‘Otras Incidencias’. Ejemplo:  “Debido a los incidentes reflejados en el apartado público, me vi en la obligación de suspender el partido. En ese momento, el equipo local defendía la portería izquierda según la salida de vestuarios, mientras el equipo visitante defendía la derecha. En ese momento, el equipo local se disponía a realizar un saque de inicio. El equipo que realizó el saque de inicio en la primera parte fue el equipo visitante. El resultado en ese instante era de Equipo Local (1) – Equipo Visitante (0)."</code></pre>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group border-t pt-4">
+                    <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-foreground">Consideraciones Especiales<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg></summary>
+                     <div class="mt-2 text-muted-foreground space-y-2">
+                        <ul class="list-disc pl-5 space-y-1">
+                            <li><strong>Incidentes Racistas:</strong> Es obligatorio realizar el gesto universal cruzando los antebrazos frente al pecho para notificar visualmente la naturaleza del incidente.</li>
+                            <li><strong>Llamada a la Fuerza Pública:</strong> Detallar si acudieron, cuál fue su evaluación y qué medidas adoptaron.</li>
+                            <li><strong>Identificación de los insultos:</strong> Quién es la persona que escucha e identifica los insultos, puede ser el mismo árbitro o un jugador quien avise al árbitro para que detenga el partido. Si el árbitro no ha sido capaz de escucharlo por sí mismo, deberá hacer mención de ello en el acta.</li>
+                            <li><strong>Duración de las Interrupciones:</strong> Especificar con precisión el tiempo que estuvo detenido el partido.</li>
+                            <li><strong>Suspensiones Definitivas:</strong> Reflejar en el apartado ‘Otras incidencias’ el estado exacto del partido, incluyendo situación de los equipos en el campo, reanudación, quien realizó el saque de inicio, resultado, etc.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </details>
+        
         <details class="group border rounded-lg p-4">
           <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-lg text-primary">
             Desvanecimientos o Incidentes de Salud del Público
