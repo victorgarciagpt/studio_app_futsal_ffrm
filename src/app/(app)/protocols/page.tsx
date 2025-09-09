@@ -1,24 +1,10 @@
+// src/app/(app)/protocols/page.tsx
 import Link from "next/link";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { format } from "date-fns";
 import { es } from "date-fns/locale";
 import { ChevronRight } from "lucide-react";
-
-const protocols = [
-  {
-    id: 'violencia-verbal',
-    title: 'Protocolo de Actuación sobre la Violencia Verbal',
-    description: 'Medidas efectivas para combatir las amenazas, insultos y manifestaciones intolerantes.',
-    updatedAt: '2024-07-20',
-  },
-  {
-    id: 'circular-n1',
-    title: 'Circular Nº 1 (Temporada 2024/2025)',
-    description: 'Normativa general y de obligado cumplimiento para el colectivo arbitral.',
-    updatedAt: '2024-07-26',
-  },
-  // Se pueden añadir más protocolos aquí en el futuro
-];
+import { protocols } from "@/data/protocols";
 
 export default function ProtocolsPage() {
   return (

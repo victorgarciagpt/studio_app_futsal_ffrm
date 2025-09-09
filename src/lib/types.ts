@@ -6,6 +6,13 @@ export type Document = {
   content: string;
 };
 
+export type Protocol = {
+  id: string;
+  title: string;
+  description: string;
+  updatedAt: string;
+};
+
 export type FutsalCategory = {
   id: string;
   title: string;
