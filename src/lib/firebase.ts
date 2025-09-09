@@ -13,13 +13,13 @@ import { getFunctions } from "firebase/functions"; // Servicio de Cloud Function
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAJo_xSKuYV097_d9duxW4_mEddYSzvQ2g",
-  authDomain: "cta-ffrm-app-v2-0824.firebaseapp.com",
-  projectId: "cta-ffrm-app-v2-0824",
-  storageBucket: "cta-ffrm-app-v2-0824.firebasestorage.app",
-  messagingSenderId: "669569802045",
-  appId: "1:669569802045:web:8460674f9172a057622f54",
-  measurementId: "G-FC8FXNCT9L"
+  apiKey: "AIzaSyBsuuULyq59A7Ankw8gfUb6UgQwPYLGoB8",
+  authDomain: "project-app-futsal.firebaseapp.com",
+  projectId: "project-app-futsal",
+  storageBucket: "project-app-futsal.firebasestorage.app",
+  messagingSenderId: "173120844182",
+  appId: "1:173120844182:web:b7bb7ea1b28c2031ea2db7",
+  measurementId: "G-G93NVFVRL4"
 };
 
 // Initialize Firebase
