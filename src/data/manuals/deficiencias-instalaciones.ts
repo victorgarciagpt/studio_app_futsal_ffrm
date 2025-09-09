@@ -5,7 +5,7 @@ export const deficienciasInstalaciones: Document = {
   id: 'deficiencias-instalaciones',
   title: 'Manual 6: Deficiencias en las Instalaciones',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">6. Deficiencias en las Instalaciones</h2>
       <p class="text-muted-foreground mb-6">El apartado de instalaciones se centra en reflejar cualquier incidente o desperfecto relacionado con el estado de las instalaciones donde se celebra el partido. Estos incidentes pueden incluir problemas con los vestuarios, el terreno de juego, iluminación, elementos obligatorios según reglamento (como banderines de esquina), entre otros. La redacción debe ser precisa y detallada, incluyendo las siguientes pautas:</p>

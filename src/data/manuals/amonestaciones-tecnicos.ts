@@ -1,10 +1,11 @@
+
 import type { Document } from '@/lib/types';
 
 export const amonestacionesTecnicos: Document = {
   id: 'amonestaciones-tecnicos',
   title: 'Manual 4.1: Amonestaciones a Técnicos',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">4.1 Amonestaciones a Dirigentes/Técnicos (Tarjetas Amarillas)</h2>
       <p class="text-muted-foreground mb-6">A continuación se detallan los principios, criterios y ejemplos para la correcta redacción de amonestaciones a dirigentes y técnicos en el acta del partido.</p>
@@ -92,7 +93,7 @@ export const amonestacionesTecnicos: Document = {
         <details class="group border rounded-lg p-4">
           <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-lg text-primary">
             Nota Importante
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
           </summary>
           <div class="mt-4 text-muted-foreground space-y-2">
             <ul class="list-disc pl-5 space-y-1">

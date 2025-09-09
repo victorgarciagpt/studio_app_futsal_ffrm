@@ -5,7 +5,7 @@ export const expulsionesTecnicos: Document = {
   id: 'expulsiones-tecnicos',
   title: 'Manual 4.2: Expulsiones a Técnicos',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">4.2 Expulsiones/Tarjetas Rojas a Dirigentes y Técnicos</h2>
       

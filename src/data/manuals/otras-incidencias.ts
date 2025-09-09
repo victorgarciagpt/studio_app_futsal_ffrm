@@ -5,7 +5,7 @@ export const otrasIncidencias: Document = {
   id: 'otras-incidencias',
   title: 'Manual 7: Otras Incidencias',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">7. Otras Incidencias</h2>
       <p class="text-muted-foreground mb-6">En este apartado se reflejará cualquier incidencia que no tenga cabida en los demás apartados, tales como lesiones o daños a miembros del equipo arbitral, accesos indebidos al vestuario arbitral, retrasos en el comienzo del partido no reflejados en otros apartados, la no utilización del balón oficial, prórrogas, tandas de penalties y suspensión de los partidos, etc. A continuación, se detalla cómo proceder en cada caso.</p>

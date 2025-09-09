@@ -5,7 +5,7 @@ export const publico: Document = {
   id: 'publico',
   title: 'Manual 5: Público',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">5. Público</h2>
       <div class="space-y-4">
@@ -196,7 +196,7 @@ La Suspensión del partido se debe reflejar en el apartado ‘Otras Incidencias�
             </details>
 
             <details class="group border-t pt-4">
-              <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-foreground">Consideraciones Especiales<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg></summary>
+              <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-foreground">Consideraciones Especiales<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg></summary>
                 <div class="mt-2 text-muted-foreground space-y-2">
                 <ul class="list-disc pl-5 space-y-1">
                     <li><strong>Incidentes Racistas:</strong> Es obligatorio realizar el gesto universal cruzando los antebrazos frente al pecho para notificar visualmente la naturaleza del incidente.</li>
@@ -250,7 +250,7 @@ Otras Incidencias: Debido al incidente mencionado en el apartado "Público," me 
                   </div>
               </details>
               <details class="group border-t pt-4">
-                  <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-foreground">Consideraciones Especiales<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg></summary>
+                  <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-foreground">Consideraciones Especiales<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg></summary>
                   <div class="mt-2 text-muted-foreground space-y-2">
                       <ul class="list-disc pl-5 space-y-1">
                           <li>Intervención Médica: Reflejar si la persona afectada fue estabilizada en el lugar o si se requirió traslado a un hospital.</li>

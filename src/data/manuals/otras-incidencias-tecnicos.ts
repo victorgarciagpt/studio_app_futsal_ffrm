@@ -1,10 +1,11 @@
+
 import type { Document } from '@/lib/types';
 
 export const otrasIncidenciasTecnicos: Document = {
   id: 'otras-incidencias-tecnicos',
   title: 'Manual 4.3: Otras Incidencias de Técnicos',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">4.3 Otras Incidencias de Dirigentes/Técnicos</h2>
       
@@ -36,8 +37,8 @@ export const otrasIncidenciasTecnicos: Document = {
           <div class="mt-4 text-muted-foreground space-y-2">
             <h4 class="font-semibold text-foreground pt-2">Detalles a Incluir:</h4>
             <ul class="list-disc pl-5 space-y-1">
-              <li>Especificar que el dirigente/técnico ya había sido expulsado.</li>
-              <li>Describir con claridad la acción cometida tras la expulsión.</li>
+                <li>Especificar que el dirigente/técnico ya había sido expulsado.</li>
+                <li>Describir con claridad la acción cometida tras la expulsión.</li>
             </ul>
             <h4 class="font-semibold text-foreground mt-4 mb-2">Ejemplo 1:</h4>
             <pre class="bg-muted/50 p-2 rounded-md whitespace-pre-wrap font-code text-sm"><code>"En el minuto 40, y una vez expulsado el entrenador local D. XXX, se dirigió a mí antes de abandonar el área técnica diciendo: '¡Eres un incompetente!'."</code></pre>
@@ -166,7 +167,7 @@ export const otrasIncidenciasTecnicos: Document = {
                   <tr class="divide-x"><td class="p-2 border align-top">El delegado de campo incumple sus funciones al no acompañar al árbitro al vestuario tras el partido.</td><td class="p-2 border align-top">"El delegado de campo local D. XXX no me acompañó al vestuario arbitral tras el partido, alegando que debía recoger material. No se produjeron incidentes."</td></tr>
                   <tr class="divide-x"><td class="p-2 border align-top">En el banquillo adicional se sientan técnicos con licencia.</td><td class="p-2 border align-top">"El equipo local presentó en su banquillo adicional a D. XXX y D. YYY, ambos encargados de material, debidamente identificados por el club."</td></tr>
                   <tr class="divide-x"><td class="p-2 border align-top">Un técnico identificado amenaza al árbitro tras finalizar el partido en el túnel de vestuarios.</td><td class="p-2 border align-top">"Tras el final del partido y en el túnel de vestuarios, el fisioterapeuta visitante D. XXX se dirigió a mí diciendo: '¡Esto no se queda así, os vais a enterar!'."</td></tr>
-                  <tr class="divide-x"><td class="p-2 border align-top">Un entrenador asume funciones de delegado en un partido de fútbol base.</td><td class="p-2 border align-top">"D. (nombre entrenador que hace de delegado) del club (indicar nombre del club) que presenta licencia de entrenador, realiza las funciones de delegado de este club."</td></tr>
+                  <tr class="divide-x"><td class="p-2 border align-top">Un entrenador asume funciones de delegado en un partido de fútbol base.</td><td class="p-2 border align-top">" D. (nombre entrenador que hace de delegado) del club (indicar nombre del club) que presenta licencia de entrenador, realiza las funciones de delegado de este club."</td></tr>
                   <tr class="divide-x"><td class="p-2 border align-top">Al finalizar el partido una persona situada en la puerta de mi vestuario, y que posteriormente fue identificada como el Presidente del club local por las Fuerzas de Orden Público, me insulta y amenaza</td><td class="p-2 border align-top">“Una vez finalizado el partido y cuando el equipo arbitral nos disponíamos a entrar al vestuario, estaba junto a la puerta esperándonos un individuo el cual se dirigió a nosotros en los siguientes términos “Sois unos maricones, en la calle no sois tan valientes, ya nos veremos las caras fuera”. Dicho individuo fue identificado posteriormente por las fuerzas del orden público como D. xxx Presindente del Club Local”</td></tr>
                 </tbody>
             </table>

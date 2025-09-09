@@ -1,10 +1,11 @@
+
 import type { Document } from '@/lib/types';
 
 export const metodologia: Document = {
   id: 'metodologia-y-consideraciones',
   title: 'Manual 1: Metodología y Consideraciones',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">1. Metodología para realizar un acta</h2>
       <p class="mb-4">El acta del partido es un documento oficial y público que cumple con las siguientes funciones y características clave para su realización:</p>
@@ -111,3 +112,5 @@ export const metodologia: Document = {
       </ul>
     `,
 };
+
+    

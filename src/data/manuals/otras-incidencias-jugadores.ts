@@ -1,14 +1,14 @@
+
 import type { Document } from '@/lib/types';
 
 export const otrasIncidenciasJugadores: Document = {
   id: 'otras-incidencias-jugadores',
   title: 'Manual 3.3: Otras Incidencias de Jugadores',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">3.3 Otras Incidencias de Jugadores</h2>
-      <p class="text-muted-foreground mb-6">En este apartado se reflejan incidentes relevantes relacionados con jugadores que no encajan en los apartados de amonestaciones o expulsiones.</p>
-
+      
       <div data-orientation="vertical" class="w-full space-y-4">
         
         <details class="group border rounded-lg p-4">
@@ -31,7 +31,7 @@ export const otrasIncidenciasJugadores: Document = {
 
         <div class="border rounded-lg">
           <div data-orientation="vertical" data-state="closed" class="border-b">
-              <h3 class="flex flex-1 items-center justify-between py-4 px-4 font-medium text-lg">
+              <h3 class="flex flex-1 items-center justify-between py-4 px-4 font-medium text-lg text-primary">
                   3.3.2. Tipos de Incidencias
               </h3>
           </div>
@@ -40,7 +40,7 @@ export const otrasIncidenciasJugadores: Document = {
               
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     A) Jugador que no aparece en la aplicación web
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -58,7 +58,7 @@ export const otrasIncidenciasJugadores: Document = {
 
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     B) Reemplazo de un Jugador antes del Partido
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -77,7 +77,7 @@ export const otrasIncidenciasJugadores: Document = {
 
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     C) Lesiones de Jugadores Durante el Partido
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -97,7 +97,7 @@ export const otrasIncidenciasJugadores: Document = {
 
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     D) Incidentes tras la Expulsión de un Jugador
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -115,7 +115,7 @@ export const otrasIncidenciasJugadores: Document = {
 
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     E) Incidentes tras la Finalización del Partido estando fuera del terreno de juego
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -134,7 +134,7 @@ export const otrasIncidenciasJugadores: Document = {
 
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     F) Peleas o Conflictos Multitudinarios
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -153,7 +153,7 @@ export const otrasIncidenciasJugadores: Document = {
 
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     G) Revisión de Fichas Solicitada por el Delegado
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -171,7 +171,7 @@ export const otrasIncidenciasJugadores: Document = {
 
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     H) Mensajes Exhibidos por Jugadores
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -189,7 +189,7 @@ export const otrasIncidenciasJugadores: Document = {
               
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     I) Exclusión de Jugadores Antes del Partido
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -209,7 +209,7 @@ export const otrasIncidenciasJugadores: Document = {
 
               <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     J) Sustituciones adicionales
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -228,7 +228,7 @@ export const otrasIncidenciasJugadores: Document = {
 
                <div class="border-b">
                 <details class="group">
-                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-primary hover:underline">
+                  <summary class="flex cursor-pointer list-none items-center justify-between py-4 font-medium text-foreground hover:underline">
                     K) Participación jugadores Regla Pasarela
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
                   </summary>
@@ -292,7 +292,5 @@ export const otrasIncidenciasJugadores: Document = {
       </div>
     `
 };
-
-    
 
     

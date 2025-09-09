@@ -1,10 +1,11 @@
+
 import type { Document } from '@/lib/types';
 
 export const anexos: Document = {
   id: 'anexos',
   title: 'Manual 8: Anexos',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">8. Anexo</h2>
       <p>El anexo se utiliza para reflejar situaciones que ocurren fuera del marco temporal o espacial del partido (ej. tras haber entregado el acta o abandonado las instalaciones) o para ampliar información olvidada. Permite detallar incidentes que pueden tener implicaciones disciplinarias importantes.</p>
@@ -21,3 +22,5 @@ export const anexos: Document = {
       <pre class="bg-muted/50 p-4 rounded-md text-sm whitespace-pre-wrap font-code text-muted-foreground my-2"><code>"Nuestra salida del vestuario y del recinto deportivo tuvo que ser escoltada en todo momento por la policía. A la salida del vestuario, se encontraban varios directivos del club local, quienes en reiteradas ocasiones nos increparon e insultaron con frases como: ‘Os vamos a matar, putas ratas, os vais a morir’. Durante este incidente, una persona, a quien no fue posible identificar, intentó propinar un puñetazo a uno de mis asistentes, sin llegar a impactarle. Posteriormente, esta persona huyó de las inmediaciones del estadio."</code></pre>
     `
 };
+
+    

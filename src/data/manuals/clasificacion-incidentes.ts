@@ -5,7 +5,7 @@ export const clasificacionIncidentes: Document = {
   id: 'clasificacion-incidentes',
   title: 'Manual 2: Clasificación de Incidentes',
   category: 'manuals',
-  updatedAt: '2024-07-25',
+  updatedAt: '2025-07-01',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">2. Clasificación de incidentes</h2>
       <p class="text-muted-foreground mb-6">En el caso de que se deba redactar algún hecho o incidente en el acta, siempre se verá limitado a uno de los siguientes apartados:</p>
