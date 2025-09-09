@@ -7,33 +7,43 @@ export const expulsionesJugadores: Document = {
   updatedAt: '2024-07-25',
   content: `
       <h2 class="font-headline text-2xl font-bold mb-4">3.2 Expulsiones de Jugadores (Tarjetas Rojas)</h2>
-      <h3 class="font-headline text-xl font-semibold mt-6 mb-2">3.2.1 Principios Generales</h3>
-      <ul class="list-disc pl-6 space-y-2">
-        <li><strong>Definición:</strong> Las expulsiones deben reflejarse en el apartado Expulsiones de Jugadores.</li>
-        <li><strong>Incidentes Especiales:</strong> Durante el descanso y fuera del terreno de juego (ej. vestuarios), la expulsión se informa verbalmente, sin mostrar tarjeta roja.</li>
-        <li><strong>Aspectos Obligatorios:</strong> Número del jugador, nombre, minuto, descripción precisa y posibles consecuencias (asistencia médica, etc.).</li>
-      </ul>
-      <h3 class="font-headline text-xl font-semibold mt-6 mb-2">3.2.2 Criterios para Redacción de Expulsiones</h3>
-      <h4 class="font-headline text-lg font-medium mt-4 mb-2">Infracciones de Carácter Físico</h4>
-      <p>Palabras clave: <strong>Uso de fuerza excesiva</strong>, <strong>brutalidad</strong>, <strong>Ocasión manifiesta de gol</strong>.</p>
-      <h4 class="font-headline text-lg font-medium mt-4 mb-2">Infracciones de Carácter Verbal</h4>
-      <p>Palabras clave: <strong>Lenguaje ofensivo, insultante o humillante</strong>. Registrar palabras exactas.</p>
-      
-      <h3 class="font-headline text-xl font-semibold mt-6 mb-2">3.2.3 Categorías de Expulsión</h3>
-      <ul class="list-disc pl-6 space-y-2">
-        <li><strong>A) Juego Brusco Grave:</strong> Infracciones con uso de fuerza excesiva. Ejemplo: "Entrada con los tacos, impactando en el gemelo del adversario y poniendo en peligro su integridad física."</li>
-        <li><strong>B) Conducta Violenta:</strong> Agresiones sin balón en juego. Ejemplo: "Propinar un puñetazo en la cara de un adversario, sin estar el balón en juego."</li>
-        <li><strong>C) Confrontaciones Colectivas:</strong> Identificar a los infractores principales.</li>
-        <li><strong>D) Ocasión Manifiesta de Gol:</strong> Evitar una OMG sin disputa de balón o con mano deliberada. Ejemplo: "Tocar el balón deliberadamente con la mano, evitando una ocasión manifiesta de gol rival."</li>
-        <li><strong>E) Lenguaje o Gestos Ofensivos:</strong> Insultos, gestos obscenos. Ejemplo: "Dirigirse al árbitro en los siguientes términos: 'Eres un hijo de puta'."</li>
-        <li><strong>F) Otros motivos:</strong> Doble amonestación; Escupir a un adversario.</li>
-      </ul>
-      <h3 class="font-headline text-xl font-semibold mt-6 mb-2">3.2.4 Casos Prácticos de Expulsiones</h3>
-      <p><strong>Juego Brusco Grave:</strong></p>
-      <pre class="bg-muted/50 p-4 rounded-md text-sm whitespace-pre-wrap font-code text-muted-foreground my-2"><code>Dorsal nº6 D.YYY en el minuto 89 por realizar una entrada con los tacos en forma de plancha, impactando en la pierna del adversario, poniendo en peligro su integridad física.</code></pre>
-      <p><strong>Insultos al equipo arbitral:</strong></p>
-      <pre class="bg-muted/50 p-4 rounded-md text-sm whitespace-pre-wrap font-code text-muted-foreground my-2"><code>Expulsión al dorsal nº11 D.XXX en el minuto 53 por dirigirse al árbitro asistente en los siguientes términos: "Eres un hijo de puta".</code></pre>
-      <p><strong>Evitar OMG con mano deliberada fuera del área:</strong></p>
-      <pre class="bg-muted/50 p-4 rounded-md text-sm whitespace-pre-wrap font-code text-muted-foreground my-2"><code>Dorsal nº1 D.XXX en el minuto 84’ por: evitar una ocasión manifiesta de gol rival mediante una mano deliberada fuera del área.</code></pre>
+      <p class="text-muted-foreground mb-6">A continuación se detallan los principios, criterios y ejemplos para la correcta redacción de expulsiones a jugadores en el acta del partido.</p>
+
+      <div data-orientation="vertical" class="w-full">
+        <div class="border-b">
+          <h3 data-orientation="vertical" data-state="closed">
+            <button type="button" aria-expanded="false" data-state="closed" class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 text-lg">
+              Principios Generales
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+          </h3>
+        </div>
+        <div class="border-b">
+          <h3 data-orientation="vertical" data-state="closed">
+            <button type="button" aria-expanded="false" data-state="closed" class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 text-lg">
+              Criterios para Redacción de Expulsiones
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+          </h3>
+        </div>
+        <div class="border-b">
+          <h3 data-orientation="vertical" data-state="closed">
+            <button type="button" aria-expanded="false" data-state="closed" class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 text-lg">
+              Categorías de Expulsión
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+          </h3>
+        </div>
+        <div class="border-b">
+          <h3 data-orientation="vertical" data-state="closed">
+            <button type="button" aria-expanded="false" data-state="closed" class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180 text-lg">
+              Casos Prácticos de Expulsiones
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4 shrink-0 transition-transform duration-200"><path d="m6 9 6 6 6-6"></path></svg>
+            </button>
+          </h3>
+        </div>
+      </div>
     `
 };
+
+    
