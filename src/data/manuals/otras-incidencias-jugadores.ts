@@ -11,16 +11,15 @@ export const otrasIncidenciasJugadores: Document = {
 
       <div data-orientation="vertical" class="w-full space-y-4">
         
-        <div class="border rounded-lg">
-          <div data-orientation="vertical" data-state="closed" class="border-b">
-              <h3 class="flex flex-1 items-center justify-between py-4 px-4 font-medium text-lg">
-                  3.3.1 Principios Generales
-              </h3>
-          </div>
-          <div class="p-6 pt-2">
+        <details class="group border rounded-lg p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-lg text-primary">
+              3.3.1 Principios Generales
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="mt-4 text-muted-foreground space-y-2">
             <p>En este apartado se reflejan incidentes relevantes relacionados con jugadores que no encajan en los apartados de amonestaciones o expulsiones. Es importante incluir los hechos observados de forma objetiva y con la máxima precisión posible.</p>
             <p class="mt-2">Si un jugador tras ser expulsado realiza alguna acción relevante que deba ser reflejada en el acta, se deberá incluir en este apartado haciendo mención a que ha ocurrido justamente tras ser expulsado. Dicho apartado recoge además sucesos como: similitud de colores de equipaciones, lesiones de jugadores, exclusión de jugadores y su reemplazo, cambios de dorsales entre jugadores sin aviso al árbitro, falta de licencia federativa de jugadores, acciones relevantes que cometen los jugadores antes del partido sobre el campo o fuera de él o una vez finalizado el partido fuera del terreno de juego.</p>
-            <h4 class="font-semibold mt-4 mb-2">Aspectos comunes a reflejar:</h4>
+            <h4 class="font-semibold mt-4 mb-2 text-foreground">Aspectos comunes a reflejar:</h4>
             <ul class="list-disc pl-6 space-y-1 text-sm">
               <li>Número y nombre del jugador.</li>
               <li>Momento en que ocurre (antes, durante o después del partido).</li>
@@ -28,7 +27,7 @@ export const otrasIncidenciasJugadores: Document = {
               <li>Consecuencias (lesiones, sustituciones, etc.).</li>
             </ul>
           </div>
-        </div>
+        </details>
 
         <div class="border rounded-lg">
           <div data-orientation="vertical" data-state="closed" class="border-b">
@@ -246,12 +245,11 @@ export const otrasIncidenciasJugadores: Document = {
           </div>
         </div>
 
-        <div class="border rounded-lg">
-          <div data-orientation="vertical" data-state="closed" class="border-b">
-              <h3 class="flex flex-1 items-center justify-between py-4 px-4 font-medium text-lg">
-                  3.3.3 Casos Prácticos de Otras Incidencias
-              </h3>
-          </div>
+        <details class="group border rounded-lg p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-lg text-primary">
+              3.3.3. Casos Prácticos de Otras Incidencias
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
           <div class="p-6 pt-2">
             <div class="overflow-x-auto">
               <table class="w-full text-sm">
@@ -275,22 +273,21 @@ export const otrasIncidenciasJugadores: Document = {
               </table>
             </div>
           </div>
-        </div>
+        </details>
 
-        <div class="border rounded-lg">
-          <div data-orientation="vertical" data-state="closed" class="border-b">
-              <h3 class="flex flex-1 items-center justify-between py-4 px-4 font-medium text-lg">
-                  3.3.4. Nota Importante
-              </h3>
-          </div>
-          <div class="p-6 pt-2">
+        <details class="group border rounded-lg p-4">
+          <summary class="flex cursor-pointer list-none items-center justify-between font-medium text-lg text-primary">
+              3.3.4. Nota Importante
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-5 w-5 shrink-0 transition-transform duration-200 group-open:rotate-180"><path d="m6 9 6 6 6-6"></path></svg>
+          </summary>
+          <div class="mt-4 text-muted-foreground space-y-2">
             <ul class="list-disc pl-6 space-y-1 text-sm">
                 <li>Reflejar únicamente hechos objetivos, evitando valoraciones personales.</li>
                 <li>Especificar el momento y lugar de los sucesos.</li>
                 <li>Identificar a todos los involucrados con claridad.</li>
             </ul>
           </div>
-        </div>
+        </details>
 
       </div>
     `
