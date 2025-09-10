@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Info } from "lucide-react";
+import Image from "next/image";
 
 const ListItem = ({ children, level = 1 }: { children: React.ReactNode, level?: number }) => {
     const padding = level === 1 ? "pl-5" : "pl-10";
@@ -37,6 +38,15 @@ export default function AsistentesRfefPage() {
                             <li>Marcar comenzar el partido.</li>
                             <li>Seleccionar “Realizar Acta“ (NO actualizar resultandos).</li>
                         </ol>
+                        <div className="mt-4">
+                            <Image 
+                                src="https://i.imgur.com/uGGrwF4.png" 
+                                alt="Instrucciones Asistentes RFEF" 
+                                width={500} 
+                                height={300}
+                                className="rounded-md border"
+                            />
+                        </div>
                     </AccordionContent>
                 </AccordionItem>
                 
