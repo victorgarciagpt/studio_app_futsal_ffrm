@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { Star, MessageSquarePlus, Send } from "lucide-react";
+import { Star, MessageSquarePlus, Send, LifeBuoy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -49,29 +49,33 @@ export default function FeedbackPage() {
   const { toast } = useToast();
 
   const handleSubmit = async () => {
-    if (rating === 0) {
+    if (rating === 0 && comment.trim() === "") {
       toast({
         variant: "destructive",
-        title: "Puntuación requerida",
-        description: "Por favor, selecciona al menos una estrella.",
+        title: "Opinión vacía",
+        description: "Por favor, selecciona una puntuación o escribe un comentario.",
       });
       return;
     }
     
     setIsLoading(true);
     try {
-      await sendFeedback({ rating, comment });
+      // Usamos un email de ejemplo, en una app real vendría de la sesión del usuario.
+      const userEmail = "arbitro@ffrm.es"; 
+      
+      await sendFeedback({ rating, comment, email: userEmail });
+      
       toast({
         title: "¡Gracias por tu feedback!",
         description: "Hemos recibido tu opinión. Nos ayuda a mejorar.",
       });
       setRating(0);
       setComment("");
-    } catch (error) {
+    } catch (error: any) {
       toast({
         variant: "destructive",
         title: "Error al enviar",
-        description: "No se pudo enviar tu feedback. Por favor, inténtalo de nuevo más tarde.",
+        description: error.message || "No se pudo enviar tu feedback. Por favor, inténtalo de nuevo más tarde.",
       });
     } finally {
         setIsLoading(false);
@@ -86,7 +90,7 @@ export default function FeedbackPage() {
       <Card className="max-w-2xl mx-auto">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 font-headline text-2xl">
-            <MessageSquarePlus className="h-6 w-6" />
+            <LifeBuoy className="h-6 w-6" />
             Tu opinión nos importa
           </CardTitle>
           <CardDescription>

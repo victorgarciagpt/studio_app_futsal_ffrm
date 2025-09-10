@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BookOpenCheck, FileText, Trophy, UserCircle2, MessageCircle, LayoutDashboard } from "lucide-react";
+import { BookOpenCheck, FileText, Trophy, UserCircle2, MessageCircle, LayoutDashboard, LifeBuoy } from "lucide-react";
 import {
   SidebarMenu,
   SidebarMenuItem,
@@ -17,6 +17,7 @@ const navItems = [
   { href: "/manuals", icon: BookOpenCheck, label: "Manual de Actas" },
   { href: "/assistant", icon: MessageCircle, label: "Asistente IA" },
   { href: "/profile", icon: UserCircle2, label: "Perfil" },
+  { href: "/feedback", icon: LifeBuoy, label: "Feedback y Soporte" },
 ];
 
 export function MainNav() {
