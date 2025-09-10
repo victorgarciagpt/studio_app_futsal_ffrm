@@ -40,7 +40,7 @@ export default function AsistentesRfefPage() {
                         </ol>
                         <div className="mt-4">
                             <Image 
-                                src="https://i.imgur.com/uGGrwF4.png" 
+                                src="https://i.imgur.com/ir9706D.png" 
                                 alt="Instrucciones Asistentes RFEF" 
                                 width={500} 
                                 height={300}
