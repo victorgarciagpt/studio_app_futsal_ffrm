@@ -73,47 +73,6 @@ export default function CircularN1Page() {
                         <p>Los Entrenadores en categorías regionales excepcionalmente podrán sustituir a otro entrenador de una categoría distinta siempre que tenga la titulación adecuada, el árbitro lo incluirá en el acta y lo hará constar que es distinta categoría.</p>
                         <p>Los entrenadores en la categoría nacional de División de Honor Juvenil del mismo club podrán estar también en el equipo de 3ª División.</p>
                         <p>Los entrenadores del mismo club podrán estar en el Acta y banquillo en los encuentros si la categoría de su licencia es igual o superior a la del encuentro (Ejemplo: Entrenador con Licencia en 3ª División en un equipo Infantil). En el caso que sea de inferior categoría a una superior no podrán estar en el banquillo. Salvo autorización de la FFRM.</p>
-                        
-                        <p className="font-semibold mt-2">Para conocer si una categoría es superior a otra, menciono de forma de superior a inferior todas las categorías:</p>
-                        <ol className="list-decimal list-outside ml-5 mt-2 space-y-1 text-sm">
-                            <li>Primera División Masculina: Nacional (RFEF)</li>
-                            <li>Segunda División Masculina: Nacional (RFEF)</li>
-                            <li>Primera División Femenina: Nacional (RFEF)</li>
-                            <li>Segunda División Femenina: Nacional (RFEF)</li>
-                            <li>Segunda División "B": Nacional (RFEF)</li>
-                            <li>Tercera División Nacional: Nacional (RFEF)</li>
-                            <li>Preferente Autonómica Masculino: Regional (FFRM)</li>
-                            <li>Preferente Femenina: Regional (FFRM)</li>
-                            <li>1ª Autonómica: Regional (FFRM)</li>
-                            <li>Tercera Autonómica: Regional (FFRM)</li>
-                            <li>División de Honor Juvenil: Nacional (RFEF)</li>
-                            <li>Liga Autonómica Juvenil: Regional (FFRM)</li>
-                            <li>1ªJuvenil: Regional (FFRM)</li>
-                            <li>2ª Juvenil: Regional (FFRM)</li>
-                            <li>Juvenil/Cadete Femenina: Regional (FFRM)</li>
-                            <li>División de Honor Cadete: Nacional (RFEF)</li>
-                            <li>Liga Autonómica Cadete: Regional (FFRM)</li>
-                            <li>Segunda Cadete: Regional (FFRM)</li>
-                            <li>División de Honor Infantil: Regional (FFRM)</li>
-                            <li>Liga Autonómica Infantil: Regional (FFRM)</li>
-                            <li>Segunda Infantil: Regional (FFRM)</li>
-                            <li>Infantil Femenina: Regional (FFRM)</li>
-                            <li>División de Honor Alevín F.S. : Regional (FFRM)</li>
-                            <li>Liga Autonómica Alevín F.S. : Regional (FFRM)</li>
-                            <li>1ª Alevín F.S. : Regional (FFRM)</li>
-                            <li>2ª Alevín F.S. : Regional (FFRM)</li>
-                            <li>Alevín Femenina: Regional (FFRM)</li>
-                            <li>División de Honor Benjamín F.S. : Regional (FFRM)</li>
-                            <li>Liga Autonómica Benjamín F.S. : Regional (FFRM)</li>
-                            <li>1ª Benjamín F.S. : Regional (FFRM)</li>
-                            <li>2ª Benjamín F.S. : Regional (FFRM)</li>
-                            <li>Benjamín Femenina: Regional (FFRM)</li>
-                            <li>División de Honor Prebenjamín F.S. : Regional (FFRM)</li>
-                            <li>Liga Autonómica Prebenjamín F.S. : Regional (FFRM)</li>
-                            <li>Prebenjamín F.S. : Regional (FFRM)</li>
-                            <li>Prebenjamín Murcia Fútbol Sala: Regional (FFRM)</li>
-                            <li>Debutantes: Regional (FFRM)</li>
-                        </ol>
                         <p className="mt-2">En el caso que una licencia de entrenador sea de inferior categoría a una superior no podrán estar en el banquillo, salvo autorización de la FFRM. Por lo tanto, un entrenador de la categoría Preferente no podrá actuar como entrenador en un partido de la categoría Infantil.</p>
                         <p className="font-semibold mt-2">Titulaciones Entrenadores:</p>
                         <ul className="list-disc pl-5 mt-2 space-y-1">
