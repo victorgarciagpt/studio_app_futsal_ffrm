@@ -1,3 +1,4 @@
+
 import type { FutsalCategory } from '@/lib/types';
 
 export const segundaDivisionMasculina: FutsalCategory = {
@@ -9,10 +10,10 @@ export const segundaDivisionMasculina: FutsalCategory = {
   tiempoMuerto: '1 por equipo en cada parte',
   reglaPasarela: false,
   reglaDiferencia10Goles: false,
-  jugadores: 'Hasta 14 por partido',
+  jugadores: '14 Jugadores y 7 miembros del cuerpo técnico',
   minJugadores: '3 para comenzar',
   presenciaArbitral: '2 árbitros principales, 1 árbitro asistente. Contacto 48h antes.',
-  llegadaInstalaciones: '3h antes en localidad, 1h 30min en pabellón',
+  llegadaInstalaciones: '3h antes en localidad, 1h 30min en instalaciones',
   porterias: 'Estándar (sin reducción)',
   saqueMeta: 'Infracción si el portero pasa de medio campo. Indirecto desde la línea central.',
   cesionPortero: 'No permitida para recoger con las manos. Indirecto desde línea del área.',

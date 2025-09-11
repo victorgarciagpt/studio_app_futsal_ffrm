@@ -1,3 +1,4 @@
+
 import type { FutsalCategory, GeneralNote } from '@/lib/types';
 
 import { primeraDivisionMasculina } from './1-div-masc';
@@ -76,8 +77,8 @@ export const ffrmGeneralNotes: GeneralNote[] = [
         content: "Cualquier delegado con ficha en un club puede ejercer sus funciones en cualquier categoría de ese mismo club. Esta norma no aplica a categorías Nacionales (1ª, 2ª, 3ª Div. Masculina, Div. Honor Juvenil, Div. Honor Cadete, 1ª y 2ª Div. Femenina)."
     },
     {
-        title: "Licencias de Entrenadores (Categorías Regionales)",
-        content: `Regla General: Entrenadores de categorías superiores NO pueden actuar en inferiores (Ej: un técnico de 3ª División no puede entrenar a un equipo Cadete).\nExcepción: En categorías Alevín, Benjamín, Prebenjamín y Debutantes, los entrenadores de categorías superiores SÍ pueden ejercer.`
+        title: "Licencias de Entrenadores (Categorías Regionales y Nacionales)",
+        content: `En categorías regionales, un entrenador puede sustituir a otro de categoría distinta si tiene la titulación adecuada.\nUn entrenador de DH Juvenil puede estar en 3ª División.\nRegla general: un entrenador puede estar en una categoría igual o inferior a su licencia. No puede estar en una superior a su licencia, salvo autorización de la FFRM.`
     },
     {
         title: "Entrenador en Prácticas (Categorías Regionales)",

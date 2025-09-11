@@ -1,3 +1,4 @@
+
 import type { FutsalCategory } from '@/lib/types';
 
 export const preferenteAutonomicaMasculino: FutsalCategory = {
@@ -9,10 +10,10 @@ export const preferenteAutonomicaMasculino: FutsalCategory = {
   tiempoMuerto: '1 por equipo en cada parte',
   reglaPasarela: false,
   reglaDiferencia10Goles: false,
-  jugadores: 'Hasta 14 por partido',
+  jugadores: '14 Jugadores y 7 miembros del cuerpo técnico',
   minJugadores: '3 para comenzar',
   presenciaArbitral: 'Árbitro y árbitro asistente. Contacto 48h antes.',
-  llegadaInstalaciones: '1h antes en localidad',
+  llegadaInstalaciones: '1h antes',
   porterias: 'Estándar (sin reducción)',
   saqueMeta: 'Infracción si el portero pasa de medio campo. Indirecto desde la línea central.',
   cesionPortero: 'No permitida para recoger con las manos. Indirecto desde línea del área.',

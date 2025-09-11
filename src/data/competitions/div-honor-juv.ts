@@ -1,15 +1,16 @@
+
 import type { FutsalCategory } from '@/lib/types';
 
 export const divisionHonorJuvenil: FutsalCategory = {
   id: 'div-honor-juv',
   title: 'División de Honor Juvenil',
   regulador: 'RFEF',
-  balon: 'Joma',
+  balon: 'Joma TOP 5',
   tiempoJuego: '2 tiempos de 20 minutos (reloj parado)',
   tiempoMuerto: '1 por equipo en cada parte',
   reglaPasarela: false,
   reglaDiferencia10Goles: false,
-  jugadores: 'Hasta 14 por partido',
+  jugadores: '14 Jugadores y 7 miembros del cuerpo técnico',
   minJugadores: '3 para comenzar',
   presenciaArbitral: '2 árbitros principales, 1 árbitro asistente. Contacto 48h antes.',
   llegadaInstalaciones: '1h antes en pabellón',
