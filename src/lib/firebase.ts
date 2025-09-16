@@ -1,6 +1,5 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth"; // Servicio de Autenticación
 import { getFirestore } from "firebase/firestore"; // Servicio de Firestore
 import { getDatabase } from "firebase/database"; // Servicio de Realtime Database
@@ -16,7 +15,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyBsuuULyq59A7Ankw8gfUb6UgQwPYLGoB8",
   authDomain: "project-app-futsal.firebaseapp.com",
   projectId: "project-app-futsal",
-  storageBucket: "project-app-futsal.firebasestorage.app",
+  storageBucket: "project-app-futsal.appspot.com",
   messagingSenderId: "173120844182",
   appId: "1:173120844182:web:b7bb7ea1b28c2031ea2db7",
   measurementId: "G-G93NVFVRL4"
@@ -27,7 +26,6 @@ const firebaseConfig = {
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
 // Inicializa y exporta las instancias de los servicios
-export const analytics = getAnalytics(app);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const database = getDatabase(app);

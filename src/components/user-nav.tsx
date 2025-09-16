@@ -14,9 +14,23 @@ import {
 import Link from "next/link";
 import { useSidebar } from "./ui/sidebar";
 import { MoreHorizontal } from "lucide-react";
+import { useAuth } from "@/contexts/auth-context";
+import { useRouter } from "next/navigation";
+import { signOut } from "firebase/auth";
+import { auth } from "@/lib/firebase";
 
 export function UserNav() {
-    const { state } = useSidebar();
+  const { state } = useSidebar();
+  const { user } = useAuth();
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    router.push("/login");
+  };
+
+  const userEmail = user?.email || "cargando...";
+  const userFallback = userEmail.charAt(0).toUpperCase();
 
   return (
     <DropdownMenu>
@@ -25,13 +39,13 @@ export function UserNav() {
                 <div className="flex justify-between items-center w-full">
                     <div className="flex gap-2 items-center">
                         <Avatar className="h-8 w-8">
-                            <AvatarImage src="https://placehold.co/100x100.png" alt="Árbitro" data-ai-hint="person portrait" />
-                            <AvatarFallback>A</AvatarFallback>
+                            <AvatarImage src={user?.photoURL || "https://placehold.co/100x100.png"} alt="Árbitro" data-ai-hint="person portrait" />
+                            <AvatarFallback>{userFallback}</AvatarFallback>
                         </Avatar>
                         {state === 'expanded' && (
-                        <div className="flex flex-col items-start">
-                            <span className="text-sm font-medium">Árbitro Ejemplo</span>
-                            <span className="text-xs text-muted-foreground">arbitro@ffrm.es</span>
+                        <div className="flex flex-col items-start overflow-hidden">
+                            <span className="text-sm font-medium truncate">{user?.displayName || "Árbitro"}</span>
+                            <span className="text-xs text-muted-foreground truncate">{userEmail}</span>
                         </div>
                         )}
                     </div>
@@ -42,9 +56,9 @@ export function UserNav() {
       <DropdownMenuContent className="w-56" align="end" forceMount>
         <DropdownMenuLabel className="font-normal">
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">Árbitro Ejemplo</p>
+            <p className="text-sm font-medium leading-none">{user?.displayName || "Árbitro"}</p>
             <p className="text-xs leading-none text-muted-foreground">
-              arbitro@ffrm.es
+              {userEmail}
             </p>
           </div>
         </DropdownMenuLabel>
@@ -58,8 +72,8 @@ export function UserNav() {
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem asChild>
-            <Link href="/login">Cerrar sesión</Link>
+        <DropdownMenuItem onClick={handleLogout}>
+            Cerrar sesión
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
