@@ -31,7 +31,7 @@ export default function ProfilePage() {
       await sendPasswordResetEmail(auth, user.email);
       toast({
         title: "Correo enviado",
-        description: "Revisa tu bandeja de entrada para cambiar la contraseña.",
+        description: "Revisa tu bandeja de entrada (y la carpeta de spam) para cambiar la contraseña.",
       });
     } catch (error) {
       console.error("Error sending password reset email:", error);
