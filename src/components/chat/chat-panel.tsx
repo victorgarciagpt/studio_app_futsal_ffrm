@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useRef, FormEvent, useEffect } from "react";
-import { chatAssistant } from "@/ai/flows/chat-assistant";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -10,13 +9,28 @@ import { ChatMessage } from "./chat-message";
 import { useToast } from "@/hooks/use-toast";
 import type { Message, Conversation } from "@/lib/types";
 
+type ChatAction = (input: {
+  uid: string;
+  locale: string;
+  message: string;
+  sessionId: string;
+}) => Promise<{ text: string; citations: string[] }>;
+
 type ChatPanelProps = {
   conversation: Conversation;
-  allConversations: Conversation[];
-  saveConversations: (conversations: Conversation[]) => void;
+  saveConversation: (conversation: Conversation) => void;
+  chatAction: ChatAction;
+  placeholder?: string;
+  welcomeMessage?: string;
 };
 
-export function ChatPanel({ conversation, allConversations, saveConversations }: ChatPanelProps) {
+export function ChatPanel({
+  conversation,
+  saveConversation,
+  chatAction,
+  placeholder = "Pregunta algo...",
+  welcomeMessage = "Hola, ¿en qué puedo ayudarte hoy?"
+}: ChatPanelProps) {
   const [messages, setMessages] = useState<Message[]>(conversation.messages);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -47,7 +61,7 @@ export function ChatPanel({ conversation, allConversations, saveConversations }:
     setIsLoading(true);
 
     try {
-      const response = await chatAssistant({
+      const response = await chatAction({
         uid: "test-user",
         locale: "es-ES",
         message: input,
@@ -64,9 +78,7 @@ export function ChatPanel({ conversation, allConversations, saveConversations }:
         
         // Update and save conversation
         const updatedConversation: Conversation = { ...conversation, messages: finalMessages, timestamp: new Date() };
-        const otherConversations = allConversations.filter(c => c.id !== conversation.id);
-        const sortedConversations = [...otherConversations, updatedConversation].sort((a, b) => new Date(b.timestamp!).getTime() - new Date(a.timestamp!).getTime());
-        saveConversations(sortedConversations);
+        saveConversation(updatedConversation);
       } else {
         throw new Error("No response from AI assistant");
       }
@@ -77,6 +89,8 @@ export function ChatPanel({ conversation, allConversations, saveConversations }:
         title: "Error",
         description: "No se pudo obtener una respuesta del asistente.",
       });
+       // Restore previous messages on error
+       setMessages(messages);
     } finally {
       setIsLoading(false);
     }
@@ -87,7 +101,7 @@ export function ChatPanel({ conversation, allConversations, saveConversations }:
         <ScrollArea className="flex-1 p-4" ref={scrollAreaRef}>
             <div className="space-y-6">
             {messages.length === 0 && (
-                <ChatMessage role="assistant" content="Hola, soy el asistente de la FFRM. ¿En qué puedo ayudarte hoy?" />
+                <ChatMessage role="assistant" content={welcomeMessage} />
             )}
             {messages.map((message, index) => (
                 <ChatMessage key={index} {...message} />
@@ -109,7 +123,7 @@ export function ChatPanel({ conversation, allConversations, saveConversations }:
             <Textarea
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Pregunta sobre reglamentos, protocolos..."
+                placeholder={placeholder}
                 className="flex-1 resize-none"
                 rows={1}
                 onKeyDown={(e) => {
