@@ -50,8 +50,11 @@ export async function chatCompetitions(
 
     const outputText = responseData.output || "No se ha recibido una respuesta válida.";
 
+    // Clean citation markers from the response text
+    const cleanedText = outputText.replace(/\s*【.*?†source】/g, '');
+
     return {
-      text: outputText,
+      text: cleanedText,
       citations: [],
     };
 
