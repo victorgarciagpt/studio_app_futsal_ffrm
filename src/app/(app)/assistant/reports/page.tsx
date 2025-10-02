@@ -35,6 +35,10 @@ export default function AssistantReportsPage() {
     // Add to state but don't save to storage until there's a message
     setConversations(prev => [newConversation, ...prev]);
     setActiveConversationId(newId);
+
+    // Switch to chat tab
+    const chatTabTrigger = document.querySelector('button[data-state="inactive"][value="chat"]') as HTMLButtonElement | null;
+    chatTabTrigger?.click();
   };
   
   const saveConversation = useCallback((updatedConversation: Conversation) => {
